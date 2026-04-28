@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a1628"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#c8a55a"/>
+  <text x="600" y="240" text-anchor="middle" font-family="serif" font-size="52" font-weight="900" fill="#ffffff">
+    値下げしないと選ばれない。
+  </text>
+  <text x="600" y="320" text-anchor="middle" font-family="serif" font-size="56" font-weight="900" fill="#c8a55a">
+    その構造を、変えませんか。
+  </text>
+  <text x="600" y="420" text-anchor="middle" font-family="sans-serif" font-size="24" fill="rgba(255,255,255,0.5)">
+    知識・経験・世界観を、IPへ。価格主導権を握る方法。
+  </text>
+  <rect x="0" y="626" width="1200" height="4" fill="#c8a55a"/>
+</svg>
