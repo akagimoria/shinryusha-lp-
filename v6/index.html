@@ -187,7 +187,8 @@ section{padding:52px 24px;position:relative}
   border-top:1px solid rgba(139,79,255,0.2);
   border-bottom:1px solid rgba(139,79,255,0.2);
 }
-.img-full img{width:100%;display:block}
+.img-full img{width:100%;display:block;max-height:280px;object-fit:cover;object-position:center}
+.img-full.img-tall img{max-height:420px}
 
 /* ── INSIGHT ── */
 .insight{
@@ -566,6 +567,11 @@ footer p{font-size:11px;color:var(--muted);line-height:1.8}
   </p>
 </div>
 
+<!-- IMAGE: 消耗する経営者 -->
+<div class="img-full img-tall">
+  <img src="images/problem-exec.png" alt="消耗する経営者">
+</div>
+
 <!-- PROBLEM -->
 <section class="problem">
   <p class="section-label">PROBLEM</p>
@@ -603,9 +609,9 @@ footer p{font-size:11px;color:var(--muted);line-height:1.8}
   </div>
 </section>
 
-<!-- IMAGE BREAK: books -->
-<div class="img-full">
-  <img src="images/hero-books.png" alt="出版が経営を変える">
+<!-- IMAGE: 本と光 -->
+<div class="img-full img-tall">
+  <img src="images/insight-book.png" alt="出版が経営を変える">
 </div>
 
 <!-- INSIGHT -->
@@ -688,6 +694,11 @@ footer p{font-size:11px;color:var(--muted);line-height:1.8}
     </div>
   </div>
 </section>
+
+<!-- IMAGE: 上昇グラフ -->
+<div class="img-full img-tall">
+  <img src="images/case-growth.png" alt="出版による経営成果">
+</div>
 
 <!-- CASES -->
 <section class="cases">
@@ -878,6 +889,11 @@ footer p{font-size:11px;color:var(--muted);line-height:1.8}
     </div>
   </div>
 </section>
+
+<!-- IMAGE: 本×クリスタル -->
+<div class="img-full img-tall">
+  <img src="images/cta-book.png" alt="出版IPプロデュース">
+</div>
 
 <!-- CTA -->
 <section class="cta" id="cta">
