@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>出版IPプロデュース | 新流舎</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:       #0d0d0d;
+      --black-mid:   #141414;
+      --black-light: #1e1e1e;
+      --black-card:  #1a1a1a;
+      --orange:      #e05218;
+      --orange-light:#f07040;
+      --white:       #f4f2ee;
+      --white-dim:   #a8a5a0;
+      --muted:       #585654;
+      --border:      rgba(255,255,255,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      max-width: 430px;
+      margin: 0 auto;
+      overflow-x: hidden;
+      padding-bottom: 64px;
+    }
+
+    /* ─── HERO ─── */
+    .hero img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ─── SECTION BASE ─── */
+    .sec {
+      padding: 64px 24px;
+    }
+    .sec-label {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+    .orange-bar {
+      width: 32px;
+      height: 2px;
+      background: var(--orange);
+      margin-bottom: 20px;
+    }
+    .sec-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.6;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .sec-lead {
+      font-size: 13px;
+      line-height: 2;
+      color: var(--white-dim);
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ─── PROBLEM ─── */
+    .sec-problem { background: var(--black-mid); }
+
+    .prob-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .prob-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .prob-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: rgba(224,82,24,0.25);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 34px;
+    }
+    .prob-item p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--white-dim);
+      padding-top: 4px;
+    }
+    .prob-closing {
+      margin-top: 52px;
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .prob-closing-main {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 19px;
+      color: var(--white);
+      line-height: 1.7;
+      margin-bottom: 4px;
+    }
+    .prob-closing-accent {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 19px;
+      color: var(--orange);
+      line-height: 1.7;
+    }
+
+    /* ─── WHY ─── */
+    .sec-why { background: var(--black); }
+
+    .why-block {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 44px;
+    }
+    .why-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: rgba(224,82,24,0.1);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .why-item h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 17px;
+      color: var(--white);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .why-item p {
+      font-size: 13px;
+      line-height: 2;
+      color: var(--white-dim);
+    }
+    .why-tag {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 11px;
+      color: var(--orange);
+      border: 1px solid rgba(224,82,24,0.35);
+      padding: 3px 12px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── PROFILE ─── */
+    .sec-profile { background: var(--black-mid); }
+
+    .profile-box {
+      border: 1px solid var(--border);
+      padding: 36px 24px;
+      margin-top: 32px;
+      text-align: center;
+    }
+    .profile-photo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 1.5px solid var(--orange);
+      margin: 0 auto 18px;
+      overflow: hidden;
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile-role {
+      font-size: 10px;
+      color: var(--orange);
+      letter-spacing: 0.15em;
+      margin-bottom: 4px;
+    }
+    .profile-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      color: var(--white);
+    }
+    .profile-name-en {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .p-tag {
+      font-size: 10px;
+      color: var(--white-dim);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+    }
+    .profile-bio {
+      font-size: 13px;
+      line-height: 2;
+      color: var(--white-dim);
+      text-align: left;
+    }
+
+    /* ─── SERVICE ─── */
+    .sec-service { background: var(--black); }
+
+    .svc-cards {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .svc-card {
+      background: var(--black-card);
+      border: 1px solid var(--border);
+      padding: 24px 20px;
+    }
+    .svc-step {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+    .svc-card h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .svc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .svc-list li {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--white-dim);
+      padding-left: 16px;
+      position: relative;
+    }
+    .svc-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 1px;
+      background: var(--orange);
+    }
+
+    /* ─── STRENGTHS ─── */
+    .sec-strength { background: var(--black-mid); }
+
+    .str-list {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .str-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .str-item:first-child { border-top: 1px solid var(--border); }
+    .str-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 12px;
+      color: var(--orange);
+      flex-shrink: 0;
+      padding-top: 2px;
+      letter-spacing: 0.05em;
+    }
+    .str-item h3 {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .str-item p {
+      font-size: 13px;
+      line-height: 1.85;
+      color: var(--white-dim);
+    }
+
+    /* ─── FLOW ─── */
+    .sec-flow { background: var(--black); }
+
+    .flow-list {
+      margin-top: 32px;
+      position: relative;
+    }
+    .flow-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .flow-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 42px;
+      bottom: -14px;
+      width: 1px;
+      background: linear-gradient(to bottom, rgba(224,82,24,0.4), transparent);
+    }
+    .flow-num {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 13px;
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+    .flow-body { padding-top: 8px; }
+    .flow-body h3 {
+      font-size: 14px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .flow-body p {
+      font-size: 13px;
+      line-height: 1.85;
+      color: var(--white-dim);
+    }
+
+    /* ─── CASES ─── */
+    .sec-cases { background: var(--black-mid); }
+
+    .case-list {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .case-card {
+      border: 1px solid var(--border);
+      background: var(--black-card);
+    }
+    .case-head {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      border-left: 3px solid var(--orange);
+    }
+    .case-tag {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+    .case-head h3 {
+      font-size: 14px;
+      color: var(--white);
+    }
+    .case-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .case-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .case-img-placeholder {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+    }
+    .case-body { padding: 18px; }
+    .case-challenge {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.75;
+      padding-left: 12px;
+      border-left: 2px solid rgba(224,82,24,0.3);
+      margin-bottom: 16px;
+    }
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .case-kpi {
+      text-align: center;
+      padding: 12px 6px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+    }
+    .case-kpi-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      color: var(--orange);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .case-kpi-label {
+      font-size: 10px;
+      color: var(--white-dim);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* ─── METRICS ─── */
+    .sec-metrics { background: var(--black); }
+
+    .metrics-grid {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .metric-box {
+      border: 1px solid var(--border);
+      padding: 24px 10px;
+      text-align: center;
+      background: var(--black-card);
+    }
+    .metric-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 24px;
+      color: var(--orange);
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .metric-label {
+      font-size: 11px;
+      color: var(--white-dim);
+      line-height: 1.5;
+    }
+    .metric-note {
+      font-size: 10px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    /* ─── FAQ ─── */
+    .sec-faq { background: var(--black-mid); }
+
+    .faq-list {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .faq-q-text {
+      font-size: 13px;
+      color: var(--white);
+      line-height: 1.6;
+      flex: 1;
+      padding-right: 16px;
+    }
+    .faq-icon {
+      color: var(--orange);
+      font-size: 20px;
+      line-height: 1;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .faq-a {
+      display: none;
+      padding: 0 0 20px;
+      font-size: 13px;
+      color: var(--white-dim);
+      line-height: 1.95;
+    }
+    .faq-item.open .faq-a   { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* ─── CTA ─── */
+    .sec-cta {
+      background: var(--black-card);
+      padding: 64px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .sec-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 160px; height: 2px;
+      background: var(--orange);
+    }
+    .cta-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .cta-text {
+      font-size: 13px;
+      color: var(--white-dim);
+      line-height: 2;
+      margin-bottom: 40px;
+    }
+    .btn-main {
+      display: block;
+      width: 100%;
+      padding: 18px 20px;
+      background: var(--orange);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+      border: none;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+      transition: opacity 0.2s;
+    }
+    .btn-main:active { opacity: 0.85; }
+    .btn-note {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #080808;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    footer p {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ─── FIXED BAR ─── */
+    .fixed-bar {
+      position: fixed;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 430px;
+      padding: 10px 16px;
+      background: rgba(13,13,13,0.96);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 200;
+    }
+    .fixed-bar a {
+      display: block;
+      padding: 13px;
+      background: var(--orange);
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section style="padding:0;">
+  <img src="v8-hero.png" alt="本で、会社の価値を上げる。新流舎" style="width:100%; display:block;">
+</section>
+
+<!-- PROBLEM -->
+<section class="sec sec-problem">
+  <div class="sec-label">THE PROBLEM</div>
+  <div class="orange-bar"></div>
+  <h2 class="sec-title">多くの経営者が、<br>出版で失敗する理由</h2>
+  <div class="prob-list">
+    <div class="prob-item">
+      <div class="prob-num">01</div>
+      <p>本を出したが、集客にも収益にもつながっていない</p>
+    </div>
+    <div class="prob-item">
+      <div class="prob-num">02</div>
+      <p>出版社に任せきりで、IPが自社の資産になっていない</p>
+    </div>
+    <div class="prob-item">
+      <div class="prob-num">03</div>
+      <p>「いい本ができた」で終わり、事業への展開が見えない</p>
+    </div>
+  </div>
+  <div class="prob-closing">
+    <p class="prob-closing-main">出版は、ゴールではない。</p>
+    <p class="prob-closing-accent">起点である。</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY -->
+<section class="sec sec-why">
+  <div class="sec-label">OUR PHILOSOPHY</div>
+  <div class="orange-bar"></div>
+  <h2 class="sec-title">「本を出す」ことは、<br>経営の構造を<br>変えることだ</h2>
+  <p class="sec-lead">書籍は単なる情報媒体ではありません。あなたの智慧・哲学・経験を社会的資産として流通させ、企業そのものの価値を高める戦略ツールです。</p>
+  <div class="why-block">
+    <div class="why-item">
+      <div class="why-num">01</div>
+      <h3>信頼は「つくる」のではなく<br>「証明」するもの</h3>
+      <p>出版社の審査を通過した事実は、どんな広告にも代えられない社会的信用を獲得します。「誰が言っているか」が問われる時代、書籍は最強のクレデンシャルです。</p>
+      <span class="why-tag">SNS広告の信頼度 25〜36% → 編集コンテンツ 60%以上</span>
+    </div>
+    <div class="why-item">
+      <div class="why-num">02</div>
+      <h3>書籍は、24時間365日<br>動き続ける「資産」</h3>
+      <p>Amazonや書店という一等地のメディアに、あなたの会社の思想が並び続けます。広告と違い、コストをかけるほど価値が積み上がるストック型の集客手段です。</p>
+      <span class="why-tag">広告費削減効果 ▲30〜60%</span>
+    </div>
+    <div class="why-item">
+      <div class="why-num">03</div>
+      <h3>共感から始まる商談は、<br>成約率が根本的に違う</h3>
+      <p>読者は数時間かけてあなたの思想に触れ、すでに共感した状態で問い合わせてきます。「比較検討」ではなく「指名」で選ばれる——それが出版が生み出す商談の質です。</p>
+      <span class="why-tag">商談化率・成約率 2〜3倍</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROFILE -->
+<section class="sec sec-profile">
+  <div class="sec-label">PRODUCER</div>
+  <div class="orange-bar"></div>
+  <h2 class="sec-title">プロデューサー紹介</h2>
+  <div class="profile-box">
+    <div class="profile-photo">
+      <img src="shiroyamasan.png" alt="白山 裕彬">
+    </div>
+    <div class="profile-role">代表取締役 / 編集者</div>
+    <div class="profile-name">白山 裕彬</div>
+    <div class="profile-name-en">HIROAKI SHIROYAMA</div>
+    <div class="profile-tags">
+      <span class="p-tag">10万部ベストセラー 毎年達成</span>
+      <span class="p-tag">出版社Sランク（3,700社中上位5社）</span>
+      <span class="p-tag">映画化 3作品</span>
+      <span class="p-tag">担当 200作品以上</span>
+    </div>
+    <p class="profile-bio">
+      出版社勤務時代、無名の処女作家を数多く発掘し、自主企画の重版率は業界平均の4倍以上を記録。0.075%と言われる中、10万部ベストセラーを10年以上毎年達成。取次PPIにおけるSランク指定（3,700社中上位5社）まで出版社を成長させた実績を持つ。担当作品はNASA・ZARA・FCバルセロナなどとも関連し、ディズニーやハリウッドでの映画化も実現。2024年に新流舎を設立し、出版を起点とした企業IP化戦略を展開中。
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVICE -->
+<section class="sec sec-service">
+  <div class="sec-label">PROGRAM</div>
+  <div class="orange-bar"></div>
+  <h2 class="sec-title">プログラム内容</h2>
+  <div class="svc-cards">
+
+    <div class="svc-card">
+      <div class="svc-step">PART 01</div>
+      <h3>"売れる本"の条件を知る</h3>
+      <ul class="svc-list">
+        <li>99%の人が間違える出版戦略 ― 商業出版のリアル</li>
+        <li>良い本・良い原稿・良い文章の決定的な違い</li>
+        <li>売れる企画の条件：読者・市場・No.1ポジション</li>
+        <li>著者、読者、市場 ― 3つの視点から企画を構築する方法</li>
+        <li>2作目・3作目を見据えた1作目の設計思想</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-step">PART 02</div>
+      <h3>あなたの事業を"1冊"に変換する</h3>
+      <ul class="svc-list">
+        <li>ワーク：あなたの事業を「本」に変換する</li>
+        <li>白山によるマンツーマンの企画書ブラッシュアップ</li>
+        <li>出版企画書をA4 2枚に凝縮する技術</li>
+        <li>ベストセラーに必要な営業戦略とマーケティング</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-step">PART 03</div>
+      <h3>編集者から直接、合否の評価を受ける</h3>
+      <ul class="svc-list">
+        <li>完成した企画書を白山へ直接プレゼン</li>
+        <li>商業出版の可能性を評価・フィードバック</li>
+        <li>出版後の事業展開ロードマップの設計</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STRENGTHS -->
+<section class="sec sec-strength">
+  <div class="sec-label">WHY SHINRYUSHA</div>
+  <div class="orange-bar"></div>
+  <h2 class="sec-title">新流舎が選ばれる<br>4つの理由</h2>
+  <div class="str-list">
+    <div class="str-item">
+      <div class="str-num">01</div>
+      <div>
+        <h3>商業出版の信頼性 × スピード</h3>
+        <p>商業出版水準の品質を保ちながら、最短6ヶ月での出版を実現。ビジネス戦略に合わせたスケジュールで動きます。</p>
+      </div>
+    </div>
+    <div class="str-item">
+      <div class="str-num">02</div>
+      <div>
+        <h3>出版から事業成果まで一気通貫</h3>
+        <p>「本をつくる」で終わらない。広告運用・CRM設計・事業設計コンサルまで専門家チームがフルサポートします。</p>
+      </div>
+    </div>
+    <div class="str-item">
+      <div class="str-num">03</div>
+      <div>
+        <h3>編集者の眼 × 経営視点</h3>
+        <p>ベストセラー編集者の知見と経営者向けIP戦略の知見を掛け合わせた唯一のプロデュース。「経営に効く本」をつくります。</p>
+      </div>
+    </div>
+    <div class="str-item">
+      <div class="str-num">04</div>
+      <div>
+        <h3>事業成果にコミット</h3>
+        <p>広告費削減・成約率向上・LTV最大化という具体的な事業成果にコミットし、出版後も伴走します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FLOW -->
+<section class="sec sec-flow">
+  <div class="sec-label">PROCESS</div>
+  <div class="orange-bar"></div>
+  <h2 class="sec-title">プロデュースの流れ</h2>
+  <div class="flow-list">
+    <div class="flow-item">
+      <div class="flow-num">1</div>
+      <div class="flow-body">
+        <h3>無料個別相談（60分）</h3>
+        <p>現状の課題・事業目標をヒアリング。出版を活用した戦略の可能性を診断します。</p>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">2</div>
+      <div class="flow-body">
+        <h3>企画MTG・コンセプト設計</h3>
+        <p>ターゲット読者の設定、キーワード分析、書籍コンセプトの策定。「誰に、何を、なぜ」を言語化します。</p>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">3</div>
+      <div class="flow-body">
+        <h3>取材・原稿制作</h3>
+        <p>4〜5回のインタビューで素材を抽出。プロライターが代行執筆し、編集・校正まで対応します。</p>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">4</div>
+      <div class="flow-body">
+        <h3>出版・流通・広告スタート</h3>
+        <p>装丁・DTP・出版手続きから、書店配本・Amazon展開・広告運用まで一括で動きます。</p>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">5</div>
+      <div class="flow-body">
+        <h3>出版後の事業設計・伴走</h3>
+        <p>リード獲得導線・セミナー設計・高単価商品化まで、出版後の事業成果に向けて継続サポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CASES -->
+<section class="sec sec-cases">
+  <div class="sec-label">CASE STUDY</div>
+  <div class="orange-bar"></div>
+  <h2 class="sec-title">実績・事例</h2>
+  <p class="sec-lead">出版後、事業が変わった5つのストーリー。</p>
+  <div class="case-list">
+
+    <div class="case-card">
+      <div class="case-head">
+        <div class="case-tag">CASE 01 ／ カウンセリング</div>
+        <h3>パニック障害専門カウンセラー</h3>
+      </div>
+      <div class="case-img"><span class="case-img-placeholder">IMAGE AREA</span></div>
+      <div class="case-body">
+        <p class="case-challenge">電子書籍では反応ゼロ。検索数もなく、信頼の獲得方法に行き詰まっていた。</p>
+        <div class="case-grid">
+          <div class="case-kpi"><div class="case-kpi-num">11週</div><div class="case-kpi-label">Amazon<br>連続1位</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">1,000名</div><div class="case-kpi-label">セミナー<br>集客数</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">▲2/3</div><div class="case-kpi-label">広告費<br>削減</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">TV出演</div><div class="case-kpi-label">キー局<br>3番組</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-head">
+        <div class="case-tag">CASE 02 ／ 教育・英語塾</div>
+        <h3>オンライン英語塾 代表</h3>
+      </div>
+      <div class="case-img"><span class="case-img-placeholder">IMAGE AREA</span></div>
+      <div class="case-body">
+        <p class="case-challenge">学生起業で自費出版に挑戦するも効果なし。ブランド確立の打開策が必要だった。</p>
+        <div class="case-grid">
+          <div class="case-kpi"><div class="case-kpi-num">1位</div><div class="case-kpi-label">英語検定部門<br>Amazon</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">ABEMA</div><div class="case-kpi-label">定番<br>コメンテーター</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">日経等</div><div class="case-kpi-label">大手メディア<br>多数掲載</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">大手出版</div><div class="case-kpi-label">商業出版<br>オファー獲得</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-head">
+        <div class="case-tag">CASE 03 ／ 医師×不動産講師</div>
+        <h3>医師専門の不動産講座 代表</h3>
+      </div>
+      <div class="case-img"><span class="case-img-placeholder">IMAGE AREA</span></div>
+      <div class="case-body">
+        <p class="case-challenge">知名度ゼロの整形外科医が、不動産投資教育の権威になるための戦略が必要だった。</p>
+        <div class="case-grid">
+          <div class="case-kpi"><div class="case-kpi-num">1,000万</div><div class="case-kpi-label">月平均<br>営業利益</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">200名</div><div class="case-kpi-label">毎月の<br>受講者数</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">No.1</div><div class="case-kpi-label">医師向け<br>不動産ポジション</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">1年</div><div class="case-kpi-label">達成までの<br>期間</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-head">
+        <div class="case-tag">CASE 04 ／ 不動産</div>
+        <h3>インバウンド向け不動産会社 代表</h3>
+      </div>
+      <div class="case-img"><span class="case-img-placeholder">IMAGE AREA</span></div>
+      <div class="case-body">
+        <p class="case-challenge">過去4作品を出版するも成果なし。ROIの改善と実売上への貢献が課題だった。</p>
+        <div class="case-grid">
+          <div class="case-kpi"><div class="case-kpi-num">3億円</div><div class="case-kpi-label">取引<br>売上額</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">▲50%</div><div class="case-kpi-label">広告費<br>削減</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">2〜3倍</div><div class="case-kpi-label">媒介<br>契約率</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">▲1/2</div><div class="case-kpi-label">新規顧客<br>獲得単価</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-head">
+        <div class="case-tag">CASE 05 ／ キャリア支援</div>
+        <h3>教員向け転職コーチング 代表</h3>
+      </div>
+      <div class="case-img"><span class="case-img-placeholder">IMAGE AREA</span></div>
+      <div class="case-body">
+        <p class="case-challenge">SNS集客のみでは質・量ともに苦戦。冷やかしが多く成約率が伸び悩んでいた。</p>
+        <div class="case-grid">
+          <div class="case-kpi"><div class="case-kpi-num">1.5倍</div><div class="case-kpi-label">年商<br>拡大</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">70〜80%</div><div class="case-kpi-label">セールス<br>成約率</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">80%</div><div class="case-kpi-label">見込み客の<br>読者率</div></div>
+          <div class="case-kpi"><div class="case-kpi-num">官公庁</div><div class="case-kpi-label">企業研修<br>依頼殺到</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- METRICS -->
+<section class="sec sec-metrics">
+  <div class="sec-label">RESULTS</div>
+  <div class="orange-bar"></div>
+  <h2 class="sec-title">支援全体の<br>平均成果指標</h2>
+  <div class="metrics-grid">
+    <div class="metric-box"><div class="metric-num">+3,000万</div><div class="metric-label">平均売上増分（年）</div></div>
+    <div class="metric-box"><div class="metric-num">2〜3倍</div><div class="metric-label">商談化率・成約率</div></div>
+    <div class="metric-box"><div class="metric-num">▲30〜60%</div><div class="metric-label">広告費削減効果</div></div>
+    <div class="metric-box"><div class="metric-num">40%</div><div class="metric-label">メディア出演率</div></div>
+  </div>
+  <p class="metric-note">※成果は一例であり、事業規模・市場環境により異なります</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="sec sec-faq">
+  <div class="sec-label">FAQ</div>
+  <div class="orange-bar"></div>
+  <h2 class="sec-title">よくあるご質問</h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">文章を書いたことがなくても大丈夫ですか？</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">問題ありません。インタビュー取材（4〜5回）でお話しいただいた内容を、プロのライターが原稿に仕上げます。あなたが担当するのは取材対応・原稿確認のみです。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">出版にかかる期間はどのくらいですか？</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">企画確定から最短6ヶ月での出版を目指します。制作・流通を一貫して管理するため、スピードと品質を両立しています。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">ベストセラーを目指すサービスですか？</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">いいえ。「本を売ること」ではなく、「本を使って経営課題を解決すること」が目的です。あなたの本の「使い道」を一緒に設計するサービスです。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">費用の目安を教えてください</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">伴走型のコンサルティングプラン（月額）と、出版から事業設計まで一括のパッケージプランの2種類があります。詳細は個別相談にてお伝えします。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">過去に出版したことがありますが相談できますか？</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">はい。「出版したが成果につながらなかった」というご相談も多くいただいています。過去の出版を起点に、営業導線・事業設計を見直すところから支援できます。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">どんな業種・規模の会社が対象ですか？</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">年商1億〜30億規模の中小企業経営者、士業、専門家、コンサルタントの方が主な対象です。業種は問いませんが、出版を通じて経営課題を根本から解決したいという方向けのサービスです。</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<section class="sec-cta">
+  <div class="sec-label">CONTACT</div>
+  <div class="orange-bar" style="margin: 0 auto 20px;"></div>
+  <h2 class="cta-title">まず、話してみてください。<br>あなたの本の使い道を<br>一緒に考えます。</h2>
+  <p class="cta-text">
+    無料個別相談では、貴社の現状と<br>出版を起点とした戦略の可能性を診断します。<br>
+    完全無料・秘密厳守・オンライン対応。
+  </p>
+  <a href="mailto:info@shinryusha.com" class="btn-main">無料個別相談を申し込む →</a>
+  <p class="btn-note">完全無料・オンライン対応・秘密厳守</p>
+</section>
+
+<footer>
+  <p>© 2026 SHINRYUSYA Co., Ltd. All Rights Reserved.</p>
+</footer>
+
+<div class="fixed-bar">
+  <a href="mailto:info@shinryusha.com">無料個別相談を申し込む →</a>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
