@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#1a1a1a"/>
+  <!-- 左ページ -->
+  <path d="M16 8 C16 8 10 9 7 11 L7 25 C10 23 16 23 16 23 Z" fill="#e8c84a" opacity="0.9"/>
+  <!-- 右ページ -->
+  <path d="M16 8 C16 8 22 9 25 11 L25 25 C22 23 16 23 16 23 Z" fill="#e8c84a"/>
+  <!-- 中央の折り目 -->
+  <line x1="16" y1="8" x2="16" y2="23" stroke="#1a1a1a" stroke-width="1.2"/>
+</svg>
