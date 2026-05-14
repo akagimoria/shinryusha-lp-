@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>出版IPプロデュース — 本が、経営の悩みを全て解決する | 新流舎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#04091d;
+  --navy-mid:#070e2a;
+  --navy-light:#0c1540;
+  --purple:#7b3fef;
+  --purple-mid:#9d5fff;
+  --purple-light:#b880ff;
+  --purple-glow:rgba(123,63,239,0.25);
+  --purple-glow2:rgba(157,95,255,0.15);
+  --white:#eeeaff;
+  --white-dim:#b0a8cc;
+  --muted:#6a6480;
+  --accent:#c8b8ff;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:var(--navy);
+  color:var(--white);
+  max-width:430px;
+  margin:0 auto;
+  overflow-x:hidden;
+}
+
+/* ── HERO ── */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:80px 24px 60px;
+  overflow:hidden;
+  background:var(--navy);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 80%, rgba(100,50,220,0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 20% 20%, rgba(60,30,150,0.25) 0%, transparent 50%),
+    linear-gradient(160deg, #050b22 0%, #080e2e 50%, #04091d 100%);
+}
+.geo-shape{
+  position:absolute;
+  pointer-events:none;
+}
+.geo-1{
+  right:-20px;bottom:20%;
+  width:200px;height:200px;
+  background:linear-gradient(135deg, rgba(90,40,200,0.4), rgba(60,20,160,0.1));
+  clip-path:polygon(50% 0%, 100% 30%, 80% 100%, 20% 100%, 0% 30%);
+  filter:blur(1px);
+}
+.geo-2{
+  right:10px;bottom:18%;
+  width:120px;height:120px;
+  background:linear-gradient(45deg, rgba(130,70,255,0.6), rgba(80,30,200,0.2));
+  clip-path:polygon(30% 0%, 100% 20%, 70% 100%, 0% 80%);
+}
+.geo-3{
+  right:60px;bottom:30%;
+  width:60px;height:60px;
+  background:rgba(160,100,255,0.7);
+  clip-path:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  filter:blur(0.5px);
+}
+.geo-circle{
+  position:absolute;
+  right:-40px;bottom:15%;
+  width:220px;height:220px;
+  border:1px solid rgba(120,70,240,0.3);
+  border-radius:50%;
+}
+.geo-circle2{
+  position:absolute;
+  right:-70px;bottom:10%;
+  width:300px;height:300px;
+  border:1px solid rgba(100,50,200,0.15);
+  border-radius:50%;
+}
+.geo-line{
+  position:absolute;
+  left:0;top:0;right:0;bottom:0;
+  background:
+    linear-gradient(60deg, transparent 40%, rgba(100,60,220,0.1) 40.5%, transparent 41%),
+    linear-gradient(120deg, transparent 55%, rgba(80,40,180,0.08) 55.5%, transparent 56%);
+}
+.hero-label{
+  position:relative;
+  font-size:11px;
+  letter-spacing:0.25em;
+  color:var(--purple-light);
+  margin-bottom:20px;
+  font-family:'Noto Serif JP',serif;
+}
+.hero-label::before,.hero-label::after{
+  content:'';display:inline-block;
+  width:24px;height:1px;
+  background:var(--purple);
+  vertical-align:middle;
+  margin:0 8px;
+}
+.hero-title{
+  position:relative;
+  font-family:'Noto Serif JP',serif;
+  font-size:26px;
+  font-weight:700;
+  line-height:1.5;
+  letter-spacing:0.05em;
+  margin-bottom:24px;
+  color:var(--white);
+}
+.hero-title em{
+  font-style:normal;
+  color:var(--purple-light);
+  display:block;
+}
+.hero-sub{
+  position:relative;
+  font-size:13px;
+  line-height:1.9;
+  color:var(--white-dim);
+  margin-bottom:36px;
+  max-width:320px;
+}
+.hero-cta{
+  position:relative;
+  display:inline-block;
+  background:linear-gradient(135deg, var(--purple), #5a20c8);
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  padding:16px 36px;
+  border-radius:4px;
+  text-decoration:none;
+  letter-spacing:0.05em;
+  box-shadow:0 4px 32px rgba(123,63,239,0.5);
+}
+.hero-note{
+  position:relative;
+  font-size:11px;
+  color:var(--muted);
+  margin-top:12px;
+}
+.hero-scroll{
+  position:absolute;
+  bottom:24px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.hero-scroll span{font-size:9px;letter-spacing:0.2em;color:var(--muted)}
+.scroll-line{
+  width:1px;height:32px;
+  background:linear-gradient(to bottom, var(--purple), transparent);
+  animation:scrollDown 1.5s ease-in-out infinite;
+}
+@keyframes scrollDown{0%{opacity:0;transform:scaleY(0);transform-origin:top}50%{opacity:1}100%{opacity:0;transform:scaleY(1);transform-origin:bottom}}
+
+/* ── SECTION BASE ── */
+section{padding:56px 24px;position:relative}
+.section-label{
+  font-size:10px;
+  letter-spacing:0.3em;
+  color:var(--purple-mid);
+  text-align:center;
+  margin-bottom:8px;
+  font-family:'Noto Serif JP',serif;
+}
+.section-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:22px;
+  font-weight:700;
+  text-align:center;
+  line-height:1.55;
+  margin-bottom:32px;
+  color:var(--white);
+}
+.section-title em{font-style:normal;color:var(--purple-light)}
+.divider{
+  width:40px;height:2px;
+  background:linear-gradient(90deg,var(--purple),var(--purple-mid));
+  margin:0 auto 32px;
+  border-radius:2px;
+}
+
+/* ── INTRO BAND ── */
+.intro-band{
+  background:var(--navy-mid);
+  padding:40px 24px;
+  text-align:center;
+  border-top:1px solid rgba(120,70,240,0.2);
+  border-bottom:1px solid rgba(120,70,240,0.2);
+}
+.intro-band p{
+  font-family:'Noto Serif JP',serif;
+  font-size:16px;
+  line-height:2;
+  color:var(--white-dim);
+}
+.intro-band strong{color:var(--white);font-weight:700}
+
+/* ── PROBLEM ── */
+.problem{background:var(--navy-mid)}
+.problem-grid{display:flex;flex-direction:column;gap:12px}
+.problem-item{
+  background:var(--navy-light);
+  border:1px solid rgba(120,70,240,0.2);
+  border-radius:8px;
+  padding:18px 20px;
+  display:flex;align-items:flex-start;gap:14px;
+}
+.problem-num{
+  font-size:11px;letter-spacing:0.1em;
+  color:var(--purple-mid);
+  font-weight:700;
+  min-width:32px;
+  margin-top:2px;
+}
+.problem-text{font-size:14px;font-weight:700;line-height:1.6;color:var(--white)}
+.problem-sub{font-size:12px;color:var(--white-dim);margin-top:4px;line-height:1.6}
+
+/* ── INSIGHT ── */
+.insight{
+  background:linear-gradient(160deg, #08112e 0%, #050b22 100%);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.insight-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 50%, rgba(100,50,220,0.2) 0%, transparent 70%);
+}
+.insight-quote{
+  position:relative;
+  font-family:'Noto Serif JP',serif;
+  font-size:18px;
+  font-weight:700;
+  line-height:1.8;
+  color:var(--white);
+  margin-bottom:20px;
+}
+.insight-quote em{
+  font-style:normal;
+  display:block;
+  font-size:22px;
+  color:var(--purple-light);
+  margin:8px 0;
+}
+.insight-body{
+  position:relative;
+  font-size:13px;
+  line-height:2;
+  color:var(--white-dim);
+}
+
+/* ── WHY PUBLISHING ── */
+.why{background:var(--navy)}
+.why-cards{display:flex;flex-direction:column;gap:20px}
+.why-card{
+  border-left:3px solid var(--purple);
+  background:linear-gradient(90deg, rgba(123,63,239,0.08), transparent);
+  padding:18px 18px 18px 20px;
+  border-radius:0 8px 8px 0;
+}
+.why-card-num{
+  font-size:10px;letter-spacing:0.2em;
+  color:var(--purple-mid);
+  margin-bottom:6px;
+  font-weight:700;
+}
+.why-card-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:16px;font-weight:700;
+  color:var(--white);
+  margin-bottom:8px;
+  line-height:1.5;
+}
+.why-card-body{font-size:13px;color:var(--white-dim);line-height:1.9}
+
+/* ── MISCONCEPTION ── */
+.misconception{background:var(--navy-mid)}
+.mis-intro{
+  font-size:13px;line-height:1.9;
+  color:var(--white-dim);
+  margin-bottom:28px;
+  text-align:center;
+}
+.mis-cards{display:flex;flex-direction:column;gap:16px}
+.mis-card{
+  background:var(--navy-light);
+  border:1px solid rgba(120,70,240,0.2);
+  border-radius:8px;
+  padding:20px;
+  position:relative;
+  overflow:hidden;
+}
+.mis-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg, var(--purple), transparent);
+}
+.mis-num{
+  font-size:10px;letter-spacing:0.2em;
+  color:var(--purple-mid);
+  margin-bottom:6px;font-weight:700;
+}
+.mis-myth{
+  font-size:13px;color:var(--muted);
+  text-decoration:line-through;
+  margin-bottom:8px;
+}
+.mis-truth{
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;font-weight:700;
+  color:var(--white);
+  line-height:1.6;
+  margin-bottom:8px;
+}
+.mis-body{font-size:12px;color:var(--white-dim);line-height:1.9}
+
+/* ── CASES ── */
+.cases{background:var(--navy)}
+.case-grid{display:flex;flex-direction:column;gap:16px}
+.case-card{
+  background:var(--navy-mid);
+  border:1px solid rgba(120,70,240,0.2);
+  border-radius:8px;
+  padding:20px;
+  position:relative;overflow:hidden;
+}
+.case-card::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg, transparent, var(--purple), transparent);
+}
+.case-tag{
+  display:inline-block;
+  font-size:10px;letter-spacing:0.1em;
+  color:var(--purple-light);
+  background:rgba(123,63,239,0.15);
+  border:1px solid rgba(123,63,239,0.3);
+  border-radius:3px;
+  padding:2px 8px;
+  margin-bottom:10px;
+}
+.case-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;font-weight:700;
+  color:var(--white);
+  margin-bottom:8px;line-height:1.5;
+}
+.case-body{font-size:12px;color:var(--white-dim);line-height:1.9}
+.case-result{
+  margin-top:10px;
+  font-size:12px;font-weight:700;
+  color:var(--purple-light);
+}
+
+/* ── SERVICE ── */
+.service{
+  background:linear-gradient(160deg, #07112a 0%, #050b20 100%);
+  position:relative;overflow:hidden;
+}
+.service-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 30% 70%, rgba(80,30,200,0.2) 0%, transparent 60%);
+}
+.service-desc{
+  position:relative;
+  font-size:13px;line-height:2;
+  color:var(--white-dim);
+  margin-bottom:28px;
+  text-align:center;
+}
+.service-cards{position:relative;display:flex;flex-direction:column;gap:16px}
+.service-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(120,70,240,0.25);
+  border-radius:8px;padding:22px;
+  backdrop-filter:blur(4px);
+}
+.service-card-head{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:12px;
+}
+.service-icon{
+  width:36px;height:36px;
+  background:linear-gradient(135deg, var(--purple), #4a18b0);
+  border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;
+}
+.service-card-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;font-weight:700;
+  color:var(--white);line-height:1.4;
+}
+.service-card-body{font-size:12px;color:var(--white-dim);line-height:1.9}
+
+/* ── FLOW ── */
+.flow{background:var(--navy-mid)}
+.flow-steps{display:flex;flex-direction:column;gap:0}
+.flow-step{
+  display:flex;gap:16px;
+  padding:20px 0;
+  border-bottom:1px solid rgba(120,70,240,0.1);
+}
+.flow-step:last-child{border-bottom:none}
+.flow-left{
+  display:flex;flex-direction:column;
+  align-items:center;gap:0;
+  flex-shrink:0;width:32px;
+}
+.flow-num{
+  width:32px;height:32px;
+  background:linear-gradient(135deg, var(--purple), #5a18c8);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;color:#fff;
+  flex-shrink:0;
+}
+.flow-connector{
+  width:1px;flex:1;min-height:20px;
+  background:linear-gradient(to bottom, var(--purple), transparent);
+  margin-top:4px;
+}
+.flow-content{padding-top:4px;flex:1}
+.flow-title{
+  font-size:14px;font-weight:700;
+  color:var(--white);margin-bottom:4px;line-height:1.5;
+}
+.flow-body{font-size:12px;color:var(--white-dim);line-height:1.8}
+
+/* ── PROFILE ── */
+.profile{background:var(--navy);position:relative;overflow:hidden}
+.profile-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 40% at 80% 50%, rgba(100,50,220,0.15) 0%, transparent 60%);
+}
+.profile-inner{
+  position:relative;
+  background:var(--navy-mid);
+  border:1px solid rgba(120,70,240,0.2);
+  border-radius:12px;
+  padding:28px 20px;
+  text-align:center;
+}
+.profile-img{
+  width:90px;height:90px;
+  border-radius:50%;
+  border:2px solid var(--purple);
+  object-fit:cover;
+  margin:0 auto 16px;
+  display:block;
+  background:var(--navy-light);
+}
+.profile-name{
+  font-family:'Noto Serif JP',serif;
+  font-size:18px;font-weight:700;
+  color:var(--white);margin-bottom:4px;
+}
+.profile-title{font-size:12px;color:var(--purple-light);margin-bottom:16px}
+.profile-body{
+  font-size:13px;line-height:2;
+  color:var(--white-dim);
+  text-align:left;
+}
+
+/* ── FAQ ── */
+.faq{background:var(--navy-mid)}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{
+  background:var(--navy-light);
+  border:1px solid rgba(120,70,240,0.15);
+  border-radius:8px;overflow:hidden;
+}
+.faq-q{
+  padding:16px 18px;
+  display:flex;align-items:flex-start;gap:10px;
+  cursor:pointer;
+}
+.faq-q-mark{
+  font-size:14px;font-weight:700;
+  color:var(--purple-mid);
+  flex-shrink:0;margin-top:1px;
+}
+.faq-q-text{font-size:13px;font-weight:700;color:var(--white);line-height:1.6;flex:1}
+.faq-a{
+  padding:0 18px 16px 42px;
+  font-size:12px;line-height:1.9;
+  color:var(--white-dim);
+}
+
+/* ── CTA ── */
+.cta{
+  background:linear-gradient(160deg, #060e28 0%, #04091c 100%);
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 80%, rgba(100,50,220,0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 20% 20%, rgba(60,20,150,0.2) 0%, transparent 50%);
+}
+.cta-geo1{
+  position:absolute;right:-30px;bottom:0;
+  width:160px;height:160px;
+  background:linear-gradient(135deg, rgba(90,30,200,0.4), transparent);
+  clip-path:polygon(50% 0%, 100% 30%, 80% 100%, 20% 100%, 0% 30%);
+}
+.cta-geo2{
+  position:absolute;left:-20px;top:20px;
+  width:80px;height:80px;
+  background:rgba(100,50,200,0.2);
+  clip-path:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.cta-catch{
+  position:relative;
+  font-family:'Noto Serif JP',serif;
+  font-size:21px;font-weight:700;
+  line-height:1.6;color:var(--white);
+  margin-bottom:16px;
+}
+.cta-catch em{font-style:normal;color:var(--purple-light)}
+.cta-sub{
+  position:relative;
+  font-size:13px;line-height:2;
+  color:var(--white-dim);margin-bottom:32px;
+}
+.cta-btn{
+  position:relative;
+  display:block;
+  background:linear-gradient(135deg, var(--purple), #5a18c8);
+  color:#fff;
+  font-size:15px;font-weight:700;
+  padding:18px 24px;
+  border-radius:6px;
+  text-decoration:none;
+  letter-spacing:0.05em;
+  margin-bottom:12px;
+  box-shadow:0 6px 40px rgba(123,63,239,0.55);
+}
+.cta-note{
+  position:relative;
+  font-size:11px;color:var(--muted);
+  line-height:1.8;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy);
+  border-top:1px solid rgba(120,70,240,0.15);
+  padding:24px;
+  text-align:center;
+}
+footer p{font-size:11px;color:var(--muted);line-height:1.8}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="geo-circle"></div>
+  <div class="geo-circle2"></div>
+  <div class="geo-line"></div>
+  <div class="geo-shape geo-1"></div>
+  <div class="geo-shape geo-2"></div>
+  <div class="geo-shape geo-3"></div>
+
+  <p class="hero-label">SHINRYUSHA / 出版IPプロデュース</p>
+  <h1 class="hero-title">
+    会社の課題はすべて<br>
+    <em>「本」が解決する。</em>
+  </h1>
+  <p class="hero-sub">
+    広告、SNS、価格競争——<br>
+    その消耗から抜け出せないのは、<br>
+    「構造」が変わっていないからだ。<br>
+    出版は、その構造を変える起点になる。
+  </p>
+  <a href="#cta" class="hero-cta">無料相談を申し込む</a>
+  <p class="hero-note">※ 完全無料・強引な勧誘は一切ありません</p>
+  <div class="hero-scroll">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="intro-band">
+  <p>
+    売上が伸びているのに、<strong>なぜか疲弊している。</strong><br>
+    新規客は獲れるが、<strong>利益が残らない。</strong><br>
+    頑張るほど競合と同じ土俵に引き込まれる。<br><br>
+    それは、<strong>「誰が言うか」の構造</strong>が<br>
+    まだできていないからだ。
+  </p>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <p class="section-label">PROBLEM</p>
+  <h2 class="section-title">中堅経営者が陥る<br><em>4つの消耗</em></h2>
+  <div class="divider"></div>
+  <div class="problem-grid">
+    <div class="problem-item">
+      <span class="problem-num">01</span>
+      <div>
+        <div class="problem-text">広告費を使い続けても、刈り取りが終わらない</div>
+        <div class="problem-sub">媒体依存・CPAの高騰・ブランド資産の蓄積ゼロ</div>
+      </div>
+    </div>
+    <div class="problem-item">
+      <span class="problem-num">02</span>
+      <div>
+        <div class="problem-text">「他と比べて安くしてほしい」が止まらない</div>
+        <div class="problem-sub">差別化できていない・価格が唯一の選ばれる理由になっている</div>
+      </div>
+    </div>
+    <div class="problem-item">
+      <span class="problem-num">03</span>
+      <div>
+        <div class="problem-text">SNSを更新し続けても、信頼には変わらない</div>
+        <div class="problem-sub">フォロワー数≠購買意思決定・権威性の積み上げができない</div>
+      </div>
+    </div>
+    <div class="problem-item">
+      <span class="problem-num">04</span>
+      <div>
+        <div class="problem-text">紹介・口コミ頼みで、再現性がない</div>
+        <div class="problem-sub">属人的な成長・採用・資金調達・M&Aにも影響が出始めている</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHT -->
+<section class="insight">
+  <div class="insight-bg"></div>
+  <p class="section-label">INSIGHT</p>
+  <div class="insight-quote">
+    成功している経営者が<br>陰でやっていること——<br>
+    <em>「本を書く」こと。</em>
+  </div>
+  <div class="divider"></div>
+  <p class="insight-body">
+    出版は、自己満足でも趣味でもない。<br>
+    「誰が言うか」という、<strong style="color:var(--white)">最強の信頼フィルター</strong>を<br>
+    経営に組み込む戦略的な行為だ。<br><br>
+    本を出した経営者は、<br>
+    同じことを言っても「重く」受け取られる。<br>
+    それが構造の違いだ。
+  </p>
+</section>
+
+<!-- WHY PUBLISHING -->
+<section class="why">
+  <p class="section-label">WHY PUBLISHING</p>
+  <h2 class="section-title">なぜ<em>「本」</em>が<br>経営の武器になるのか</h2>
+  <div class="divider"></div>
+  <div class="why-cards">
+    <div class="why-card">
+      <div class="why-card-num">REASON 01</div>
+      <div class="why-card-title">「誰が言うか」が最強のフィルターになる</div>
+      <div class="why-card-body">同じ内容でも、著書のある経営者が言うのとそうでない場合では、受け手の受け取り方がまるで違う。出版は「権威性」を構造化する最速の手段だ。</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">REASON 02</div>
+      <div class="why-card-title">Better（改善）ではなく Different（別次元）を実現する</div>
+      <div class="why-card-body">競合より「少しいい」では消耗戦から抜けられない。本を持つことで、そもそも比較対象にならない存在になれる。市場のルールを自分で書き換える力が生まれる。</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">REASON 03</div>
+      <div class="why-card-title">OutsideIn ではなく InsideOut で動く経営へ</div>
+      <div class="why-card-body">市場の変化に振り回されるのではなく、自社の哲学・ビジョン・強みを起点に市場をつくる。出版はその思想を可視化し、社会に発信する器になる。</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">REASON 04</div>
+      <div class="why-card-title">本は資産として複利で効き続ける</div>
+      <div class="why-card-body">広告費はゼロになれば消える。SNS投稿は流れる。しかし本は書店に並び続け、メディアで紹介され、採用・提携・資金調達のあらゆる場面で機能し続ける。</div>
+    </div>
+  </div>
+</section>
+
+<!-- MISCONCEPTION -->
+<section class="misconception">
+  <p class="section-label">MISCONCEPTION</p>
+  <h2 class="section-title">出版についての<br><em>3つの誤解</em></h2>
+  <div class="divider"></div>
+  <p class="mis-intro">
+    「ベストセラーを出さないと意味がない」<br>
+    「有名でないと出版できない」——<br>
+    その思い込みが、行動を止めている。
+  </p>
+  <div class="mis-cards">
+    <div class="mis-card">
+      <div class="mis-num">誤解 01</div>
+      <div class="mis-myth">ベストセラーを出さないと意味がない</div>
+      <div class="mis-truth">5,000部でも、正しく届けば経営は変わる</div>
+      <div class="mis-body">重要なのは部数ではなく「誰に届くか」。ターゲットを絞った専門書は、広告費ゼロで理想的な顧客・採用候補・提携先を引き寄せる装置になる。</div>
+    </div>
+    <div class="mis-card">
+      <div class="mis-num">誤解 02</div>
+      <div class="mis-myth">有名にならないと出版できない</div>
+      <div class="mis-truth">「誰が言うか」は、実績があれば出版できる</div>
+      <div class="mis-body">出版社が求めるのは知名度ではなく「独自の視点と実績」。地方の中堅企業でも、業界特化の知見があれば出版の扉は開く。</div>
+    </div>
+    <div class="mis-card">
+      <div class="mis-num">誤解 03</div>
+      <div class="mis-myth">出版したら終わり</div>
+      <div class="mis-truth">出版は、ゴールではなく起点にすぎない</div>
+      <div class="mis-body">本を出した後のメディア露出、講演、セミナー、採用、資金調達——これらすべてが連動して機能するとき、出版は「経営のエンジン」になる。</div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="cases">
+  <p class="section-label">CASE STUDY</p>
+  <h2 class="section-title">出版が動かした<br><em>経営の実例</em></h2>
+  <div class="divider"></div>
+  <div class="case-grid">
+    <div class="case-card">
+      <span class="case-tag">心理・カウンセリング</span>
+      <div class="case-title">「先生」になった瞬間、同業者との比較が消えた</div>
+      <div class="case-body">業界最安値水準で戦っていたカウンセラーが出版。著書1冊で「著者であること」が信頼の前提に変わり、単価を2倍以上に改定しても問い合わせが増加した。</div>
+      <div class="case-result">→ 価格競争から完全に離脱</div>
+    </div>
+    <div class="case-card">
+      <span class="case-tag">IT・SaaS</span>
+      <div class="case-title">採用コストが激減し、「会いたい」人材が来るようになった</div>
+      <div class="case-body">地方のIT企業が経営哲学を書籍化。書籍に共感した人材からの自発的な応募が急増し、採用広告費を大幅に削減。ミスマッチによる離職率も改善。</div>
+      <div class="case-result">→ 採用ブランディングを確立</div>
+    </div>
+    <div class="case-card">
+      <span class="case-tag">教育・スクール</span>
+      <div class="case-title">フランチャイズ展開のきっかけは「1冊の本」だった</div>
+      <div class="case-body">教育スタートアップが独自メソッドを書籍化。全国から「地域で展開したい」という加盟希望者が集まり、全国FC展開へ。出版が事業拡大の起点になった。</div>
+      <div class="case-result">→ 全国フランチャイズ展開を実現</div>
+    </div>
+    <div class="case-card">
+      <span class="case-tag">医療・クリニック</span>
+      <div class="case-title">初診から「先生を信頼しています」と言われるようになった</div>
+      <div class="case-body">開業医が専門分野の啓発書を出版。来院前から著書を読んで予約する患者が増え、「説明の手間」が大幅に減少。患者の治療への主体性も高まった。</div>
+      <div class="case-result">→ 患者との信頼関係が事前に構築</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section class="service">
+  <div class="service-bg"></div>
+  <p class="section-label">SERVICE</p>
+  <h2 class="section-title">出版IPプロデュース<br><em>3つの柱</em></h2>
+  <div class="divider"></div>
+  <p class="service-desc">
+    新流舎は、出版を「本を出して終わり」にしない。<br>
+    経営のあらゆる課題を解決する<br>
+    知的財産（IP）として設計・実行する。
+  </p>
+  <div class="service-cards">
+    <div class="service-card">
+      <div class="service-card-head">
+        <div class="service-icon">📖</div>
+        <div class="service-card-title">出版IP設計<br>（書籍企画・出版社交渉）</div>
+      </div>
+      <div class="service-card-body">経営課題から逆算した書籍テーマの設計。出版社へのピッチ、企画書作成、編集者との調整まで一貫してサポート。</div>
+    </div>
+    <div class="service-card">
+      <div class="service-card-head">
+        <div class="service-icon">🎯</div>
+        <div class="service-card-title">コンテンツIP化<br>（執筆・編集支援）</div>
+      </div>
+      <div class="service-card-body">経営者の知識・経験・哲学をインタビューで引き出し、構造化・文章化。多忙な経営者でも執筆できる体制を構築。</div>
+    </div>
+    <div class="service-card">
+      <div class="service-card-head">
+        <div class="service-icon">🚀</div>
+        <div class="service-card-title">出版後活用戦略<br>（PR・展開設計）</div>
+      </div>
+      <div class="service-card-body">出版後のメディア露出・講演・採用・資金調達への展開設計。本を「経営エンジン」として機能させる継続的なサポート。</div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow">
+  <p class="section-label">FLOW</p>
+  <h2 class="section-title">プロデュースの流れ</h2>
+  <div class="divider"></div>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-left">
+        <div class="flow-num">1</div>
+        <div class="flow-connector"></div>
+      </div>
+      <div class="flow-content">
+        <div class="flow-title">無料相談（60分）</div>
+        <div class="flow-body">経営課題・現状・目標をヒアリング。出版で解決できる課題かどうかを丁寧に確認します。</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-left">
+        <div class="flow-num">2</div>
+        <div class="flow-connector"></div>
+      </div>
+      <div class="flow-content">
+        <div class="flow-title">IP設計・企画立案</div>
+        <div class="flow-body">経営課題から逆算した書籍テーマを設計。ターゲット読者、主張、構成を策定します。</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-left">
+        <div class="flow-num">3</div>
+        <div class="flow-connector"></div>
+      </div>
+      <div class="flow-content">
+        <div class="flow-title">出版社へのアプローチ</div>
+        <div class="flow-body">新流舎のネットワークで適切な出版社に企画を提案。交渉・調整をすべて代行します。</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-left">
+        <div class="flow-num">4</div>
+        <div class="flow-connector"></div>
+      </div>
+      <div class="flow-content">
+        <div class="flow-title">執筆・編集サポート</div>
+        <div class="flow-body">インタビューで経営者の知見を引き出し、プロが構造化・文章化。多忙でも書き上げられます。</div>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-left">
+        <div class="flow-num">5</div>
+        <div class="flow-connector"></div>
+      </div>
+      <div class="flow-content">
+        <div class="flow-title">出版・展開実行</div>
+        <div class="flow-body">出版後のPR戦略、メディア露出、講演・登壇、採用・M&Aへの活用を一気通貫で支援。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section class="profile">
+  <div class="profile-bg"></div>
+  <p class="section-label">PRODUCER</p>
+  <h2 class="section-title">プロデューサー紹介</h2>
+  <div class="divider"></div>
+  <div class="profile-inner">
+    <img src="../v9/images/shiroyamasan.png" alt="白山氏" class="profile-img" onerror="this.style.background='#1a1040';this.style.border='2px solid #7b3fef'">
+    <div class="profile-name">白山 羊介</div>
+    <div class="profile-title">新流舎 代表 / 出版IPプロデューサー</div>
+    <p class="profile-body">
+      出版社・編集プロダクション出身。これまで100名以上の経営者の出版を支援し、うち複数名がベストセラー・重版を達成。<br><br>
+      「本を出すこと」ではなく「本で経営を変えること」を目的としたプロデュースを強みとする。中堅企業の経営課題を出版IPで解決する専門家として活動中。
+    </p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <p class="section-label">FAQ</p>
+  <h2 class="section-title">よくあるご質問</h2>
+  <div class="divider"></div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">文章を書くのが苦手でも大丈夫ですか？</span>
+      </div>
+      <p class="faq-a">はい。インタビュー形式で経営者の言葉を引き出し、プロが構造化・文章化します。これまでのご支援者のほとんどが「書くのは苦手」とおっしゃっていました。</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">出版まで何ヶ月かかりますか？</span>
+      </div>
+      <p class="faq-a">企画から出版まで、通常12〜18ヶ月が目安です。出版社決定後の編集期間によって前後します。</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">自費出版と商業出版、どちらですか？</span>
+      </div>
+      <p class="faq-a">原則として商業出版（出版社が費用を負担する形式）を目指します。商業出版の方が書店流通・メディア掲載・権威性の面で経営への効果が大きいためです。</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">どのような業種・規模の方が対象ですか？</span>
+      </div>
+      <p class="faq-a">売上10億円〜3,000億円規模の中堅企業経営者を主な対象としています。業種は問いません。「独自の知見・実績」がある方であれば出版の可能性は高いです。</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">無料相談では何を話せばいいですか？</span>
+      </div>
+      <p class="faq-a">現在の経営課題、今後の目標、出版に興味を持った背景などをお聞きします。準備は不要です。お気軽にお申し込みください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-geo1"></div>
+  <div class="cta-geo2"></div>
+  <p class="section-label">CONTACT</p>
+  <h2 class="cta-catch">
+    出版は、ゴールではない。<br>
+    <em>起点である。</em>
+  </h2>
+  <p class="cta-sub">
+    まずは無料相談で、あなたの経営課題と<br>
+    出版IPの可能性を一緒に探ります。
+  </p>
+  <a href="https://forms.gle/example" class="cta-btn">無料相談を申し込む（60分）</a>
+  <p class="cta-note">
+    完全無料・強引な勧誘は一切ありません<br>
+    ご相談後の判断は、すべてあなたに委ねます
+  </p>
+</section>
+
+<footer>
+  <p>© 2024 新流舎 All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
