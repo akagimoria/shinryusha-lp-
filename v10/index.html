@@ -388,24 +388,32 @@
       gap: 20px;
     }
     .case-card {
-      border: 1px solid rgba(201,168,92,0.2);
+      border: 1px solid rgba(201,168,92,0.35);
+      border-top: 3px solid var(--gold);
       border-radius: 4px;
       overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
     .case-head {
-      background: rgba(201,168,92,0.06);
-      padding: 14px 18px;
-      border-bottom: 1px solid rgba(201,168,92,0.15);
+      background: linear-gradient(135deg, rgba(201,168,92,0.14) 0%, rgba(201,168,92,0.04) 100%);
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(201,168,92,0.2);
     }
     .case-tag {
+      display: inline-block;
       font-size: 10px;
-      letter-spacing: 0.12em;
-      color: var(--gold);
-      margin-bottom: 4px;
+      letter-spacing: 0.1em;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      font-weight: 700;
     }
     .case-head h3 {
       font-size: 15px;
       color: var(--white);
+      line-height: 1.6;
     }
     .case-img {
       width: 100%;
