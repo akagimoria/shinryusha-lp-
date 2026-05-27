@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>採用が変わる。一冊の本で。</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1208;
+    --ink-mid: #3d3425;
+    --ink-light: #7a6e5f;
+    --paper: #faf7f2;
+    --paper-warm: #f2ede4;
+    --accent: #c0392b;
+    --accent-deep: #922b21;
+    --gold: #b7860b;
+    --gold-light: #f9f0d0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+    line-height: 1.8;
+  }
+
+  .hero {
+    min-height: 100vh;
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(255,255,255,0.03) 39px,
+      rgba(255,255,255,0.03) 40px
+    );
+  }
+
+  .hero-eyebrow {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: '──';
+    margin: 0 12px;
+    opacity: 0.5;
+  }
+
+  .hero-h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(36px, 7vw, 72px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .hero-h1 em {
+    font-style: normal;
+    color: var(--accent);
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  .hero-sub {
+    font-size: clamp(15px, 2.5vw, 19px);
+    color: rgba(255,255,255,0.6);
+    margin-top: 28px;
+    line-height: 1.9;
+    max-width: 600px;
+  }
+
+  .hero-sub strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.3);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    animation: bounce 2s infinite;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  section {
+    padding: 100px 24px;
+    max-width: 840px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--ink-light);
+    opacity: 0.3;
+  }
+
+  .h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(26px, 4vw, 42px);
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+
+  .h2 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .body-text {
+    font-size: 16px;
+    line-height: 2;
+    color: var(--ink-mid);
+  }
+
+  .pain-section {
+    background: var(--paper-warm);
+    max-width: 100%;
+    padding: 100px 24px;
+  }
+
+  .pain-inner {
+    max-width: 840px;
+    margin: 0 auto;
+  }
+
+  .pain-list {
+    list-style: none;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .pain-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+  }
+
+  .pain-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .pain-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--accent);
+    opacity: 0.25;
+    line-height: 1;
+    min-width: 48px;
+  }
+
+  .pain-text {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--ink);
+    padding-top: 6px;
+  }
+
+  .truth-section {
+    background: var(--ink);
+    max-width: 100%;
+    padding: 100px 24px;
+  }
+
+  .truth-inner {
+    max-width: 840px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .truth-quote {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(22px, 4vw, 38px);
+    font-weight: 700;
+    line-height: 1.6;
+    color: #fff;
+    position: relative;
+    padding: 48px 0;
+  }
+
+  .truth-quote::before {
+    content: '"';
+    font-size: 120px;
+    color: var(--accent);
+    opacity: 0.2;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    font-family: 'Noto Serif JP', serif;
+    line-height: 1;
+  }
+
+  .truth-quote em {
+    font-style: normal;
+    color: var(--accent);
+    display: inline-block;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 2px;
+  }
+
+  .truth-source {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 24px;
+    letter-spacing: 0.15em;
+  }
+
+  .case-card {
+    background: #fff;
+    border-left: 4px solid var(--accent);
+    padding: 36px 40px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .case-tag {
+    display: inline-block;
+    background: var(--gold-light);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
+  .case-result {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 900;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .case-result em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .case-body {
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.9;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px;
+    margin: 60px 0;
+    background: rgba(0,0,0,0.06);
+  }
+
+  .stat-cell {
+    background: var(--paper);
+    padding: 36px 28px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-unit {
+    font-size: 20px;
+    margin-left: 4px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+
+  .process-steps {
+    margin-top: 56px;
+    counter-reset: step;
+  }
+
+  .process-step {
+    display: flex;
+    gap: 32px;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    counter-increment: step;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--accent);
+    opacity: 0.15;
+    line-height: 1;
+    min-width: 60px;
+    text-align: center;
+  }
+
+  .step-num::before {
+    content: counter(step, decimal-leading-zero);
+  }
+
+  .step-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  .step-body {
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.9;
+  }
+
+  .cta-section {
+    background: var(--ink);
+    max-width: 100%;
+    padding: 120px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '本';
+    position: absolute;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 400px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.02);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .cta-inner {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .cta-h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .cta-h2 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .cta-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.8;
+    margin-bottom: 56px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 22px 56px;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    position: relative;
+    transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .cta-btn:hover {
+    background: var(--accent-deep);
+    transform: translateY(-2px);
+  }
+
+  .cta-btn::after {
+    content: '→';
+    margin-left: 12px;
+  }
+
+  .cta-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    margin-top: 20px;
+    letter-spacing: 0.1em;
+  }
+
+  .big-quote {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 3.5vw, 32px);
+    font-weight: 700;
+    line-height: 1.6;
+    color: var(--ink);
+    padding: 48px 0 48px 28px;
+    border-left: 4px solid var(--accent);
+    margin: 60px 0;
+  }
+
+  .big-quote em {
+    font-style: normal;
+    background: linear-gradient(180deg, transparent 60%, rgba(192,57,43,0.2) 60%);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .faq-item {
+    border-top: 1px solid rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .faq-item:last-child { border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .faq-q {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    padding: 28px 48px 28px 0;
+    cursor: pointer;
+    position: relative;
+    line-height: 1.6;
+    user-select: none;
+  }
+  .faq-q::before { content: 'Q.'; color: var(--accent); margin-right: 12px; font-size: 15px; }
+  .faq-q::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 300;
+    transition: transform 0.3s ease;
+    font-family: sans-serif;
+    line-height: 1;
+  }
+  .faq-item.open .faq-q::after { transform: translateY(-50%) rotate(45deg); }
+  .faq-a {
+    font-size: 15px;
+    line-height: 1.95;
+    color: var(--ink-mid);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0;
+  }
+  .faq-item.open .faq-a { max-height: 400px; padding-bottom: 28px; }
+
+  @media (max-width: 600px) {
+    section { padding: 72px 20px; }
+    .case-card { padding: 28px 24px; }
+    .process-step { gap: 20px; }
+    .stat-num { font-size: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">IP戦略プロデュース</p>
+  <h1 class="hero-h1">
+    <span style="font-size: 0.5em; font-weight: 500; opacity: 0.75; display: block; margin-bottom: 12px; letter-spacing: 0.05em;">中小企業経営者のあなたへ。</span>
+    <em>たった1冊の本で、</em><br>採用が変わる。
+  </h1>
+  <p class="hero-sub">
+    広告費を積んでも、求人媒体を増やしても、<br>
+    <strong>「いい人が来ない」</strong>のには理由があります。<br>
+    問題は知名度ではなく、<strong>伝わっていないこと</strong>です。
+  </p>
+  <div class="hero-scroll">SCROLL</div>
+</div>
+
+<!-- MINI CTA 1 -->
+<div style="background: var(--paper-warm); padding: 36px 24px; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.06);">
+  <p class="fade-in" style="font-size: 13px; color: var(--ink-light); letter-spacing: 0.2em; margin-bottom: 16px;">IP戦略プロデュース</p>
+  <a href="#" class="cta-btn fade-in" style="font-size: 15px; padding: 16px 40px;">LINEで無料相談する</a>
+  <p class="fade-in" style="font-size: 12px; color: var(--ink-light); margin-top: 12px; letter-spacing: 0.1em;">完全無料 ・ 強引な営業なし ・ 秘密厳守</p>
+</div>
+
+<!-- PAIN -->
+<div class="pain-section">
+  <div class="pain-inner">
+    <p class="section-label fade-in">あなたの会社の現実</p>
+    <h2 class="h2 fade-in">採用に、<br>疲れていませんか。</h2>
+    <p class="body-text fade-in" style="margin-bottom: 12px;">真剣に向き合えば向き合うほど、うまくいかない。そのもどかしさ、きっと多くの経営者が抱えています。</p>
+    <ul class="pain-list">
+      <li class="pain-item">
+        <span class="pain-num">01</span>
+        <p class="pain-text">求人媒体にお金をかけているのに、<br>「うちとは合わない人」ばかりが応募してくる</p>
+      </li>
+      <li class="pain-item">
+        <span class="pain-num">02</span>
+        <p class="pain-text">やっと採用できたと思ったら、<br>3年以内に辞めてしまい、ミスマッチを繰り返している</p>
+      </li>
+      <li class="pain-item">
+        <span class="pain-num">03</span>
+        <p class="pain-text">「聞いたことない会社」と思われ、<br>大手には知名度で勝てないため選ばれない</p>
+      </li>
+      <li class="pain-item">
+        <span class="pain-num">04</span>
+        <p class="pain-text">自社の良さは、会って話せばわかってもらえるけれど、<br><strong>そこまで来てもらえない</strong></p>
+      </li>
+      <li class="pain-item">
+        <span class="pain-num">05</span>
+        <p class="pain-text">幹部候補・右腕が育たないので、<br>経営者が現場から離れられない</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- TRUTH -->
+<div class="truth-section">
+  <div class="truth-inner">
+    <p class="section-label fade-in" style="color: rgba(255,255,255,0.3); justify-content: center;">問題の本質</p>
+    <div class="truth-quote fade-in">
+      採用の問題は、<br><em>知名度ではありません。</em><br>「伝わっていないこと」なのです。
+    </div>
+    <p class="truth-source fade-in">── 数百社の中小企業の採用課題と向き合ってきた経験から</p>
+
+    <div style="margin-top: 64px; text-align: left; max-width: 680px; margin-left: auto; margin-right: auto;">
+      <p class="body-text fade-in" style="color: rgba(255,255,255,0.5); font-size: 13px; letter-spacing: 0.2em; margin-bottom: 24px;">── ある経営者の、気づき</p>
+
+      <p class="body-text fade-in" style="color: rgba(255,255,255,0.7);">
+        サイボウズといえば、日本を代表するIT企業です。数百万PVを誇るオウンドメディアを7年間運営し、SNSでも話題を集め続けてきました。採用に関しても、同社は人一倍真剣でした。
+      </p>
+      <br>
+      <p class="body-text fade-in" style="color: rgba(255,255,255,0.7);">
+        でも、あるとき中途採用者にアンケートをとったとき、担当者は驚きました。
+        <br><br>
+        <strong style="color: #fff; font-size: 18px; line-height: 2;">「なぜ、サイボウズに応募しようと思いましたか？」</strong>
+        <br><br>
+        1位の答えは、SNSでも、採用サイトでも、メディア露出でもありませんでした。
+        <br><br>
+        <strong style="color: rgba(255,255,255,0.95);">「社長の本を読んだから」</strong>
+        <br><br>
+        莫大なコストと時間をかけたデジタルメディアより、一冊の本の方が、人の心を動かしていたのです。
+      </p>
+      <br>
+      <p class="body-text fade-in" style="color: rgba(255,255,255,0.7);">
+        これは偶然ではありません。SNSやウェブは、情報が流れ去るメディアです。どれだけ更新しても、翌日には別の情報に上書きされていきます。でも本は違います。読者はページをめくるたびに、著者の言葉と向き合います。その人が何を大切にしてきたのか、どんな失敗を乗り越えてきたのか、何のためにこの会社を続けているのか。言葉の奥にある<strong style="color: rgba(255,255,255,0.95);">「人間」</strong>が、じわじわと伝わっていきます。
+        <br><br>
+        読み終えた求職者は、履歴書を書く前に、すでにあなたの会社の<strong style="color: rgba(255,255,255,0.95);">ファンになっています。</strong>面接は、初対面ではなく「はじめまして、でも前から知っていました」という場になるのです。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- WHY BOOK -->
+<section>
+  <p class="section-label fade-in">なぜ「本」なのか</p>
+  <h2 class="h2 fade-in">SNSでは届かない、<br><em>「魂」</em>が届く媒体です</h2>
+
+  <blockquote class="big-quote fade-in">
+    広く浅く1万人に知られるより、<br>
+    <em>深く5人に刺さる</em>ほうが、<br>採用は圧倒的にうまくいきます。
+  </blockquote>
+
+  <p class="body-text fade-in">
+    SNSやウェブ広告は「認知」を広げるメディアです。でも、それだけでは企業の「なぜこの事業をするのか」「どんな仲間と何を成し遂げたいのか」──経営者の魂は伝わりません。
+    <br><br>
+    本は違います。読者は数時間かけて、著者の思考プロセスを追体験します。弱さも、葛藤も、情熱も、行間にじわじわとにじみ出てきます。読み終えた時、候補者の心には「この人のもとで働きたい」という確信が生まれています。
+  </p>
+
+  <div class="stat-row fade-in">
+    <div class="stat-cell">
+      <span class="stat-num">3<span class="stat-unit">年</span></span>
+      <p class="stat-label">定着率<strong style="color: var(--accent)">100%</strong>を達成した<br>地方の中小金融系企業</p>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">70<span class="stat-unit">%</span></span>
+      <p class="stat-label">本の読者からの<br>成約・採用率</p>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">0</span>
+      <p class="stat-label">求人媒体への<br>依存なしで採用継続</p>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<div style="background: var(--paper-warm); padding: 100px 24px;">
+  <div style="max-width: 840px; margin: 0 auto;">
+    <p class="section-label fade-in">実際に起きたこと</p>
+    <h2 class="h2 fade-in">「本があったから、<br><em>採れました</em>」</h2>
+
+    <div class="case-card fade-in">
+      <span class="case-tag">地方 × 金融系 × 中小企業</span>
+      <p class="case-result">知名度ゼロの地方企業が、<br><em>毎年新卒5名・3年定着率100%</em>を達成しました</p>
+      <p class="case-body">
+        大手に人材が流れがちな金融業界。それでも、この会社は一冊の本で「100年後を見据えた会社のビジョン」を言語化しました。母集団はいりません。「響く人だけに深く届ける」設計で、価値観が合う人材だけが集まるようになりました。内定後に家族の反対があっても、「この本を読んでみて」と手渡せるツールにもなっています。
+      </p>
+    </div>
+
+    <div class="case-card fade-in">
+      <span class="case-tag">飲食業 × 多店舗展開 × 幹部採用</span>
+      <p class="case-result">「会って話せば絶対わかるのに」が、<br><em>本という「分身」で解決しました</em></p>
+      <p class="case-body">
+        感動を呼ぶ接客が強みの飲食オーナー。でも幹部候補が採れませんでした。解決策はシンプルでした。経営者の学生時代の部活エピソード、創業の苦悩、チームづくりの哲学を一冊に綴り、「この人だ」と思う人材に直接手渡しました。するとその本が「共通言語」になり、面接が「仲間を迎え入れる場」へと変わったのです。
+      </p>
+    </div>
+
+    <div class="case-card fade-in">
+      <span class="case-tag">医療法人 × 急成長 × 組織づくり</span>
+      <p class="case-result">出版直後、価値観の合わない社員が去り、<br><em>組織の純度が一気に高まりました</em></p>
+      <p class="case-body">
+        全国展開した医療グループは、急成長の代償として「理念の希薄化」に直面していました。経営哲学を書籍化し、全スタッフへ配布。すると、採用基準が「スキル」から「価値観への共鳴」へと変わりました。痛みも伴いましたが、残ったメンバーの目つきが変わり、組織は強くなっていきました。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- MINI CTA 2 -->
+<div style="background: var(--ink); padding: 56px 24px; text-align: center;">
+  <p class="fade-in" style="font-family: 'Noto Serif JP', serif; font-size: clamp(16px, 2.5vw, 22px); font-weight: 700; color: #fff; line-height: 1.7; margin-bottom: 28px;">
+    あなたの会社でも、同じことが起きるかもしれません。<br>
+    <span style="color: var(--accent);">まず、話だけ聞いてみませんか。</span>
+  </p>
+  <a href="#" class="cta-btn fade-in">LINEで無料相談する</a>
+  <p class="fade-in" style="font-size: 12px; color: rgba(255,255,255,0.25); margin-top: 16px; letter-spacing: 0.1em;">完全無料 ・ 強引な営業なし ・ 秘密厳守</p>
+</div>
+
+<!-- HOW IT WORKS -->
+<section>
+  <p class="section-label fade-in">何をするのか</p>
+  <h2 class="h2 fade-in">「採用のための本」は、<br><em>こうつくります</em></h2>
+
+  <div class="process-steps fade-in">
+    <div class="process-step">
+      <div class="step-num"></div>
+      <div class="step-content">
+        <p class="step-title">経営者の「なぜ」を掘り起こします</p>
+        <p class="step-body">なぜこの事業をしているのか。どんな苦難を乗り越えてきたのか。何を守り、どんな未来をつくりたいのか。この「根源的な意思」こそが、採用を変える本の核になります。</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-num"></div>
+      <div class="step-content">
+        <p class="step-title">「読者目線」に翻訳します</p>
+        <p class="step-body">自慢話でも自伝でもありません。求職者が「自分に関係ある話だ」と感じる設計に落とし込みます。泥臭さや弱さも含めた等身大のエピソードが、人の心を動かします。</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-num"></div>
+      <div class="step-content">
+        <p class="step-title">「届け方」まで設計します</p>
+        <p class="step-body">本を出して終わりにしません。採用候補者への手渡し、内定者フォロー、SNSとの連動など、本を軸にした採用フローごと設計します。</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-num"></div>
+      <div class="step-content">
+        <p class="step-title">組織のOSとして機能させます</p>
+        <p class="step-body">本は採用ツールにとどまりません。入社後の教育、幹部育成、事業承継の場面でも「共通言語」として機能し続けます。一度つくれば、長く効き続ける資産になります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<div style="background: var(--paper-warm); padding: 100px 24px;">
+  <div style="max-width: 840px; margin: 0 auto;">
+    <p class="section-label fade-in">他の手段との違い</p>
+    <h2 class="h2 fade-in">採用ブランディングに<br><em>200〜500万円</em>、かけていますか？</h2>
+
+    <p class="body-text fade-in" style="margin-bottom: 56px;">
+      採用サイトのリニューアル、採用動画の制作、ブランディングコンサルの導入──。どれも有効な手段です。ただ、多くの中小企業にとって、数百万円の先行投資は簡単ではありません。そして、つくったコンテンツは時間とともに古くなり、また費用がかかります。
+    </p>
+
+    <div class="fade-in" style="overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 15px; min-width: 540px;">
+        <thead>
+          <tr style="background: var(--ink); color: #fff;">
+            <th style="padding: 16px 20px; text-align: left; font-weight: 500; width: 28%;"></th>
+            <th style="padding: 16px 20px; text-align: center; font-weight: 500; width: 24%;">採用サイト制作</th>
+            <th style="padding: 16px 20px; text-align: center; font-weight: 500; width: 24%;">ブランディング<br>コンサル</th>
+            <th style="padding: 16px 20px; text-align: center; font-weight: 500; width: 24%; background: var(--accent);">出版（本）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid rgba(0,0,0,0.07);">
+            <td style="padding: 18px 20px; color: var(--ink-light); font-size: 13px; letter-spacing: 0.05em;">費用の目安</td>
+            <td style="padding: 18px 20px; text-align: center; color: var(--ink-mid);">50〜300万円</td>
+            <td style="padding: 18px 20px; text-align: center; color: var(--ink-mid);">200〜500万円〜</td>
+            <td style="padding: 18px 20px; text-align: center; font-weight: 500; color: var(--accent);">商業出版なら<br>印税収入あり</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(0,0,0,0.07); background: rgba(0,0,0,0.02);">
+            <td style="padding: 18px 20px; color: var(--ink-light); font-size: 13px; letter-spacing: 0.05em;">資産としての寿命</td>
+            <td style="padding: 18px 20px; text-align: center; color: var(--ink-mid);">2〜3年で陳腐化</td>
+            <td style="padding: 18px 20px; text-align: center; color: var(--ink-mid);">契約期間中のみ</td>
+            <td style="padding: 18px 20px; text-align: center; font-weight: 500; color: var(--accent);">半永久的に<br>使い続けられる</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(0,0,0,0.07);">
+            <td style="padding: 18px 20px; color: var(--ink-light); font-size: 13px; letter-spacing: 0.05em;">候補者への深度</td>
+            <td style="padding: 18px 20px; text-align: center; color: var(--ink-mid);">数分の閲覧</td>
+            <td style="padding: 18px 20px; text-align: center; color: var(--ink-mid);">間接的な訴求</td>
+            <td style="padding: 18px 20px; text-align: center; font-weight: 500; color: var(--accent);">数時間の<br>深い体験</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(0,0,0,0.07); background: rgba(0,0,0,0.02);">
+            <td style="padding: 18px 20px; color: var(--ink-light); font-size: 13px; letter-spacing: 0.05em;">採用以外への波及</td>
+            <td style="padding: 18px 20px; text-align: center; color: var(--ink-mid);">採用のみ</td>
+            <td style="padding: 18px 20px; text-align: center; color: var(--ink-mid);">採用〜組織</td>
+            <td style="padding: 18px 20px; text-align: center; font-weight: 500; color: var(--accent);">採用・教育・営業・<br>事業承継まで</td>
+          </tr>
+          <tr>
+            <td style="padding: 18px 20px; color: var(--ink-light); font-size: 13px; letter-spacing: 0.05em;">第三者としての信頼性</td>
+            <td style="padding: 18px 20px; text-align: center; color: var(--ink-mid);">自社発信</td>
+            <td style="padding: 18px 20px; text-align: center; color: var(--ink-mid);">自社発信</td>
+            <td style="padding: 18px 20px; text-align: center; font-weight: 500; color: var(--accent);">書店という<br>公の場に並ぶ</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="fade-in" style="margin-top: 48px; padding: 36px 40px; background: var(--ink); position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -20px; right: 20px; font-family: 'Noto Serif JP', serif; font-size: 100px; font-weight: 900; color: rgba(255,255,255,0.04); line-height: 1; pointer-events: none;">本</div>
+      <p style="font-family: 'Noto Serif JP', serif; font-size: clamp(16px, 2.5vw, 22px); font-weight: 700; color: #fff; line-height: 1.7; position: relative;">
+        一冊の本は、採用サイトでも広告でもなく、<br>
+        <span style="color: var(--accent);">「経営者そのもの」</span>を届けるメディアです。<br>
+        <span style="font-size: 0.85em; color: rgba(255,255,255,0.6); font-weight: 400;">つくるのは一度。使えるのは、ずっと。</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- MESSAGE -->
+<div class="truth-section">
+  <div class="truth-inner">
+    <div class="truth-quote fade-in" style="font-size: clamp(18px, 3vw, 28px);">
+      壮大な成功談は、<em>いりません。</em><br><br>
+      等身大の言葉で書かれた一冊が、<br>
+      あなたと一緒に働きたい人を<br>引き寄せてくれます。
+    </div>
+    <p class="truth-source fade-in">どんな著者にも、必ず届く読者がいます。外せないのは「純粋な動機」があること、それだけです。</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section style="max-width: 840px; margin: 0 auto; padding: 100px 24px;">
+  <p class="section-label fade-in">よくある質問</p>
+  <h2 class="h2 fade-in">「一経営者のわたしには<br>出版は関係ない」<br><em>と思っていませんか？</em></h2>
+
+  <div style="margin-top: 56px;">
+
+    <div class="faq-item fade-in">
+      <div class="faq-q">本を出すなんて、有名人や実績のある人だけでは？</div>
+      <div class="faq-a">よくある誤解です。出版に必要なのは知名度でも華々しい実績でもありません。「なぜこの事業をしているのか」という純粋な動機と、それを裏付ける経験があれば十分です。むしろ等身大の言葉で書かれた一冊のほうが、読者の心に深く刺さります。グーグル検索でヒット数ゼロだったカウンセラーが、出版後すぐにテレビのキー局からオファーを受けた事例もあります。</div>
+    </div>
+
+    <div class="faq-item fade-in">
+      <div class="faq-q">文章を書くのが苦手でも大丈夫ですか？</div>
+      <div class="faq-a">問題ありません。本づくりの核は「文章力」ではなく「何を伝えるか」です。経営者への深いヒアリングをもとに、編集者がコンテンツを整理・構成していきます。話し言葉をそのまま原稿に落とし込む手法もあります。「書けない」ことが理由で諦める必要はまったくありません。</div>
+    </div>
+
+    <div class="faq-item fade-in">
+      <div class="faq-q">ベストセラーにならないと意味がないのでは？</div>
+      <div class="faq-a">採用目的の出版において、ベストセラーは必須ではありません。1万部しか売れなくても、テレビ出演のオファーが来て業界内で一流と認知された事例があります。大切なのは「何万部売れたか」ではなく、「理想の人材に深く届いたか」です。売れる本よりも、届けたい人に届く本をつくることが目的です。</div>
+    </div>
+
+    <div class="faq-item fade-in">
+      <div class="faq-q">費用はどのくらいかかりますか？</div>
+      <div class="faq-a">商業出版の場合、出版社が制作費を負担し、著者には印税が入ります。つまり出版自体に費用はかかりません。ただし、企画が通るまでの準備や出版後の活用設計にはサポートが必要になる場合があります。採用ブランディングのコンサルが200〜500万円以上かかるのに対し、本は一度つくれば半永久的に使い続けられる資産になります。まずはご相談ください。</div>
+    </div>
+
+    <div class="faq-item fade-in">
+      <div class="faq-q">出版までどのくらい時間がかかりますか？</div>
+      <div class="faq-a">企画から出版まで、一般的に1〜1.5年ほどかかります。ただし採用への活用は出版前から始められます。原稿が完成した段階で候補者に読んでもらったり、内定者フォローに活用したりと、コンテンツができた時点から採用に組み込む設計が可能です。</div>
+    </div>
+
+    <div class="faq-item fade-in">
+      <div class="faq-q">自社に「書くネタ」があるか自信がありません。</div>
+      <div class="faq-a">「うちに大した話はない」とおっしゃる経営者ほど、掘り起こすと宝が出てきます。なぜこの事業を始めたのか、どんな失敗を乗り越えてきたのか、何を守り続けてきたのか。そこに必ず読者の心を動かす原石があります。コンテンツがないのではなく、まだ言語化されていないだけです。</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <p class="section-label fade-in" style="color: rgba(255,255,255,0.3); justify-content: center; margin-bottom: 16px;">まず、話を聞いてみる</p>
+    <p class="fade-in" style="color: var(--gold); font-size: 13px; letter-spacing: 0.25em; text-align: center; margin-bottom: 32px; font-family: 'Noto Serif JP', serif;">── IP戦略プロデュース ──</p>
+    <h2 class="cta-h2 fade-in">
+      あなたの会社の採用、<br><em>本で変えられるか</em>を<br>一緒に考えてみませんか。
+    </h2>
+    <p class="cta-sub fade-in">
+      出版が自社に合うかどうか、まだわからなくて大丈夫です。<br>
+      まずはLINEから、気軽に相談してみてください。<br>無理な売り込みは一切しません。
+    </p>
+    <a href="#" class="cta-btn fade-in">LINEで無料相談する</a>
+    <p class="cta-note fade-in">完全無料 ・ 強引な営業なし ・ 秘密厳守</p>
+  </div>
+</div>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-in, .pain-item').forEach(el => observer.observe(el));
+
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>
