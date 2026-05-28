@@ -78,6 +78,41 @@
       position: relative;
       overflow: hidden;
     }
+    .sec-problem::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0px,
+          transparent 72px,
+          rgba(201,168,92,0.07) 72px,
+          rgba(201,168,92,0.07) 75px
+        ),
+        repeating-linear-gradient(
+          to right,
+          transparent 0px,
+          transparent 18px,
+          rgba(255,255,255,0.025) 18px,
+          rgba(255,255,255,0.025) 19px,
+          transparent 19px,
+          transparent 37px,
+          rgba(255,255,255,0.015) 37px,
+          rgba(255,255,255,0.015) 38px,
+          transparent 38px,
+          transparent 62px,
+          rgba(255,255,255,0.02) 62px,
+          rgba(255,255,255,0.02) 63px,
+          transparent 63px,
+          transparent 80px,
+          rgba(255,255,255,0.03) 80px,
+          rgba(255,255,255,0.03) 81px
+        );
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 0;
+    }
     .sec-problem::after {
       content: '';
       position: absolute;
@@ -85,6 +120,11 @@
       width: 220px; height: 220px;
       background: radial-gradient(circle, rgba(201,168,92,0.07) 0%, transparent 70%);
       pointer-events: none;
+      z-index: 0;
+    }
+    .sec-problem > * {
+      position: relative;
+      z-index: 1;
     }
     .prob-list {
       margin-top: 48px;
