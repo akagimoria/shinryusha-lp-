@@ -142,27 +142,33 @@
       margin-top: 48px;
       display: flex;
       flex-direction: column;
-      gap: 36px;
+      gap: 32px;
     }
     .prob-item {
       display: flex;
-      gap: 20px;
-      align-items: flex-start;
+      flex-direction: column;
+      gap: 8px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(201,168,92,0.1);
+    }
+    .prob-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
     .prob-num {
       font-family: 'Noto Serif JP', serif;
-      font-size: 31px;
-      font-weight: 700;
-      color: rgba(201,168,92,0.35);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--gold);
       line-height: 1;
-      flex-shrink: 0;
-      width: 36px;
     }
     .prob-item p {
-      font-size: 16px;
-      line-height: 1.75;
-      color: var(--white-dim);
-      padding-top: 4px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--white);
+      font-weight: 500;
     }
     .prob-closing {
       margin-top: 56px;
@@ -623,23 +629,23 @@
   <div class="prob-list">
     <div class="prob-item">
       <div class="prob-num">01</div>
-      <p>競合と比べられ、価格交渉をされます。品質では負けていないのに、値下げを求められます。</p>
+      <p>品質では負けていないのに、値下げを求められる。</p>
     </div>
     <div class="prob-item">
       <div class="prob-num">02</div>
-      <p>広告を止めると集客が止まります。毎月ゼロから始まる消耗戦が続いています。</p>
+      <p>広告を止めると、集客が止まる。</p>
     </div>
     <div class="prob-item">
       <div class="prob-num">03</div>
-      <p>自分が動けば売れます。でも、自分がいないと回らない構造から抜け出せません。</p>
+      <p>自分が動けば売れる。</p>
     </div>
     <div class="prob-item">
       <div class="prob-num">04</div>
-      <p>「良さは会えばわかる」のに、そこまでたどり着かない見込み客が多すぎます。</p>
+      <p>「良さ」は会えばわかる。でも、そこまでたどり着かない。</p>
     </div>
     <div class="prob-item">
       <div class="prob-num">05</div>
-      <p>このままスケールしていいのか。売上は上がっても、何かが違う気がしています。</p>
+      <p>売上は上がっても、何かが違う気がする。</p>
     </div>
   </div>
 
