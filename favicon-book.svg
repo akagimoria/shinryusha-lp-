@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <!-- 背景 -->
   <rect width="32" height="32" rx="6" fill="#0b0d14"/>
-  <!-- 開いた本：左ページ -->
-  <path d="M3 9 C3 9 14 8 16 9 L16 24 C14 23 3 24 3 24 Z" fill="#c9a85c"/>
-  <!-- 開いた本：右ページ -->
-  <path d="M16 9 C18 8 29 9 29 9 L29 24 C29 24 18 23 16 24 Z" fill="#e8d5a3"/>
-  <!-- 背表紙 -->
-  <rect x="15" y="9" width="2" height="15" fill="#8a6c2e"/>
-  <!-- 左ページの文字線 -->
-  <line x1="6" y1="14" x2="13" y2="13.5" stroke="rgba(11,13,20,0.35)" stroke-width="1.2" stroke-linecap="round"/>
-  <line x1="6" y1="17" x2="13" y2="16.5" stroke="rgba(11,13,20,0.35)" stroke-width="1.2" stroke-linecap="round"/>
-  <line x1="6" y1="20" x2="11" y2="19.6" stroke="rgba(11,13,20,0.35)" stroke-width="1.2" stroke-linecap="round"/>
-  <!-- 右ページの文字線 -->
-  <line x1="19" y1="13.5" x2="26" y2="14" stroke="rgba(11,13,20,0.25)" stroke-width="1.2" stroke-linecap="round"/>
-  <line x1="19" y1="16.5" x2="26" y2="17" stroke="rgba(11,13,20,0.25)" stroke-width="1.2" stroke-linecap="round"/>
-  <line x1="19" y1="19.6" x2="24" y2="20" stroke="rgba(11,13,20,0.25)" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- 本の影 -->
+  <rect x="7" y="22" width="18" height="2" rx="1" fill="rgba(0,0,0,0.35)"/>
+  <!-- 本体（背表紙＋表紙） -->
+  <rect x="7" y="6" width="18" height="17" rx="1.5" fill="#c9a85c"/>
+  <!-- 表紙の縁取り（深み） -->
+  <rect x="7" y="6" width="18" height="17" rx="1.5" fill="none" stroke="#8a6c2e" stroke-width="0.8"/>
+  <!-- 背表紙ライン -->
+  <rect x="9" y="6" width="1" height="17" fill="#8a6c2e"/>
+  <!-- 上下の帯（装丁） -->
+  <rect x="7" y="9.5" width="18" height="0.8" fill="#8a6c2e"/>
+  <rect x="7" y="19" width="18" height="0.8" fill="#8a6c2e"/>
+  <!-- 中央の装飾線 -->
+  <rect x="13" y="13" width="6" height="0.8" fill="#0b0d14" opacity="0.7"/>
+  <rect x="13" y="15.5" width="6" height="0.8" fill="#0b0d14" opacity="0.7"/>
 </svg>
