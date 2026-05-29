@@ -666,6 +666,195 @@
       height: 1px;
       background: linear-gradient(to right, transparent, rgba(201,168,92,0.3), transparent);
     }
+
+    /* ─── TWIST ─── */
+    .sec-twist { background: var(--navy); }
+    .twist-reasons { margin-top: 32px; }
+    .twist-reason {
+      border-top: 1px solid rgba(201,168,92,0.18);
+      padding: 28px 0;
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .twist-reason:last-child { border-bottom: 1px solid rgba(201,168,92,0.18); }
+    .twist-reason-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 26px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      padding-top: 2px;
+      opacity: 0.7;
+    }
+    .twist-reason-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .twist-reason-body {
+      font-size: 13px;
+      line-height: 1.95;
+      color: var(--white-dim);
+      font-weight: 300;
+    }
+    .twist-highlight {
+      background: var(--navy-mid);
+      border-left: 2px solid var(--gold);
+      color: var(--white);
+      padding: 28px 24px;
+      margin-top: 36px;
+      position: relative;
+    }
+    .twist-highlight::before {
+      content: '\201C';
+      font-family: 'Noto Serif JP', serif;
+      font-size: 70px;
+      color: rgba(201,168,92,0.25);
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      line-height: 1;
+    }
+    .twist-highlight p {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 2;
+      letter-spacing: 0.03em;
+      position: relative;
+      z-index: 1;
+    }
+    .twist-highlight strong { color: var(--gold); font-weight: 600; display: block; margin-top: 6px; }
+
+    /* ─── STATS ─── */
+    .sec-stats { background: var(--navy-mid); }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 20px;
+      margin-top: 32px;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--white-dim);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      line-height: 1.7;
+    }
+
+    /* ─── CASES NEW ─── */
+    .sec-cases-new { background: var(--navy); }
+    .case-group { margin-top: 36px; }
+    .case-group:first-of-type { margin-top: 28px; }
+    .case-category {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .case-category-label {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .case-category-line { flex: 1; height: 1px; background: rgba(201,168,92,0.25); }
+    .case-card-new {
+      background: var(--navy-mid);
+      padding: 24px 22px;
+      border-top: 2px solid var(--gold);
+      margin-bottom: 16px;
+    }
+    .case-card-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 26px;
+      font-weight: 300;
+      color: rgba(201,168,92,0.4);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .case-card-who {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--white-dim);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .case-card-result {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.7;
+      margin-bottom: 14px;
+      letter-spacing: 0.02em;
+    }
+    .case-card-result span { color: var(--gold); }
+    .case-card-body {
+      font-size: 13px;
+      line-height: 1.95;
+      color: var(--white-dim);
+      font-weight: 300;
+    }
+
+    /* ─── HOW ─── */
+    .sec-how { background: var(--navy-mid); }
+    .how-body-text {
+      font-size: 14px;
+      line-height: 2;
+      color: var(--white-dim);
+      font-weight: 300;
+      margin-top: 16px;
+      margin-bottom: 28px;
+    }
+    .how-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .how-step {
+      padding: 24px 22px;
+      background: var(--navy);
+      border-left: 2px solid var(--gold);
+    }
+    .how-step-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .how-step-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .how-step-body {
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--white-dim);
+      font-weight: 300;
+    }
   </style>
 </head>
 <body>
@@ -675,150 +864,67 @@
   <img src="hero.png?v=2" alt="新流舎 出版IPプロデュース">
 </section>
 
-<!-- PROBLEM -->
-<section class="sec sec-problem">
-  <div class="sec-label">THE PROBLEM</div>
+<!-- TWIST -->
+<section class="sec sec-twist">
+  <div class="sec-label">THE TRUTH</div>
   <div class="gold-bar"></div>
-  <h2 class="sec-title">多くの経営者が、<br>出版で失敗する理由</h2>
-  <div class="prob-list">
-    <div class="prob-item">
-      <div class="prob-num">01</div>
-      <p>本を出したが、集客にも収益にもつながっていない</p>
+  <h2 class="sec-title">ベストセラーを<br>狙ってはいけない。</h2>
+  <p class="sec-lead">多くの経営者が出版で失敗する、3つの理由。</p>
+  <div class="twist-reasons">
+    <div class="twist-reason">
+      <div class="twist-reason-num">1</div>
+      <div>
+        <h3 class="twist-reason-title">ヒットを成功・失敗の基準にする</h3>
+        <p class="twist-reason-body">「重版しました」「何万部突破」——華やかな結果報告の裏で、期待した効果が出ない経営者が後を絶たない。ベストセラーは結果でしかない。狙って出せるものではない。</p>
+      </div>
     </div>
-    <div class="prob-item">
-      <div class="prob-num">02</div>
-      <p>出版社に任せきりで、IPが自社の資産になっていない</p>
+    <div class="twist-reason">
+      <div class="twist-reason-num">2</div>
+      <div>
+        <h3 class="twist-reason-title">ベストセラーノウハウなら成功するという勘違い</h3>
+        <p class="twist-reason-body">売れた本の企画ノウハウは、著者側に自分のコンテンツしかないという制約のなかでは機能しない。ベストセラーノウハウとは、その編集者なりの企画ノウハウであって「ベストセラーを生み出す能力」とは別物だ。</p>
+      </div>
     </div>
-    <div class="prob-item">
-      <div class="prob-num">03</div>
-      <p>「いい本ができた」で終わり、事業への展開が見えない</p>
+    <div class="twist-reason">
+      <div class="twist-reason-num">3</div>
+      <div>
+        <h3 class="twist-reason-title">ロングセラーを狙う</h3>
+        <p class="twist-reason-body">ロングセラーもベストセラー同様、結果でしかない。そもそも売れなければロングセラーにはならない。ロングセラーを期待することは、ベストセラーを狙う以上に難しい。</p>
+      </div>
     </div>
   </div>
-  <div class="prob-closing">
-    <p class="prob-closing-main">出版は、ゴールではない。</p>
-    <p class="prob-closing-gold">起点である。</p>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- WHY PUBLISHING -->
-<section style="padding:0; background: var(--navy);">
-  <img src="why-section.png" alt="本を出すことは、経営の構造を変えること" style="width:100%; display:block;">
-</section>
-
-<div class="divider"></div>
-
-<!-- PROFILE -->
-<section class="sec sec-profile">
-  <div class="sec-label">PRODUCER</div>
-  <div class="gold-bar"></div>
-  <h2 class="sec-title">プロデューサー紹介</h2>
-  <div class="profile-box">
-    <div class="profile-icon"><img src="shiroyamasan.png" alt="白山 裕彬"></div>
-    <div class="profile-role">代表取締役 / 編集者</div>
-    <div class="profile-name">白山 裕彬</div>
-    <div class="profile-name-en">HIROAKI SHIROYAMA</div>
-    <div class="profile-tags">
-      <span class="p-tag">10万部ベストセラー 毎年達成</span>
-      <span class="p-tag">出版社Sランク（3,700社中上位5社）</span>
-      <span class="p-tag">映画化 3作品</span>
-      <span class="p-tag">担当 200作品以上</span>
-    </div>
-    <p class="profile-bio">
-      出版社勤務時代、無名の処女作家を数多く発掘し、自主企画の重版率は業界平均の4倍以上を記録。0.075%と言われる中、10万部ベストセラーを10年以上毎年達成。出版社をゼロから取次PPIにおけるSランク指定（3,700社中上位5社）まで成長させた実績を持つ。担当作品はNASA・ZARA・FCバルセロナなどのグローバルブランドと関連し、ディズニーやハリウッドでの映画化も実現。2024年に新流舎を設立し、出版を起点とした企業IP化戦略を展開中。
-    </p>
+  <div class="twist-highlight">
+    <p>本業が出版以外の経営者にとって大事なことは、<br>売れるかどうかよりも、<strong>出版目的に適った結果を得られるかどうかだ。</strong></p>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- SERVICE -->
-<section style="padding:0; background: var(--navy);">
-  <img src="program-section.png" alt="プログラム内容" style="width:100%; display:block;">
-</section>
-
-<div class="divider"></div>
-
-<!-- STRENGTHS -->
-<section class="sec sec-strength">
-  <div class="sec-label">WHY SHINRYUSHA</div>
+<!-- STATS -->
+<section class="sec sec-stats">
+  <div class="sec-label">RESULTS</div>
   <div class="gold-bar"></div>
-  <h2 class="sec-title">新流舎が選ばれる<br>4つの理由</h2>
-  <div class="str-list">
-    <div class="str-item">
-      <div class="str-icon">📚</div>
-      <div>
-        <h3>商業出版の信頼性 × スピード</h3>
-        <p>商業出版水準の品質を保ちながら、最短6ヶ月での出版を実現。大手出版社への企画通過を待つことなく、ビジネス戦略に合わせたスケジュールで動けます。</p>
-      </div>
+  <h2 class="sec-title">数字で見る、本の力。</h2>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num">30-50%</div>
+      <div class="stat-label">CPA<br>（顧客獲得単価）削減</div>
     </div>
-    <div class="str-item">
-      <div class="str-icon">🎯</div>
-      <div>
-        <h3>出版から事業成果まで一気通貫</h3>
-        <p>「本をつくる」で終わらない。広告運用・CRM設計・事業設計コンサルまで専門家チームがフルサポート。出版を起点に、経営全体が変わります。</p>
-      </div>
+    <div class="stat-item">
+      <div class="stat-num">2-3x</div>
+      <div class="stat-label">成約率<br>向上</div>
     </div>
-    <div class="str-item">
-      <div class="str-icon">✍️</div>
-      <div>
-        <h3>編集者の眼 × 経営視点</h3>
-        <p>ベストセラー編集者の知見と、経営者向けIP戦略の知見を掛け合わせた唯一のプロデュース。「売れる本」ではなく「経営に効く本」をつくります。</p>
-      </div>
+    <div class="stat-item">
+      <div class="stat-num">40%</div>
+      <div class="stat-label">メディア<br>掲載率</div>
     </div>
-    <div class="str-item">
-      <div class="str-icon">📈</div>
-      <div>
-        <h3>事業成果にコミット</h3>
-        <p>出版はゴールではなく、スタート。広告費削減・成約率向上・LTV最大化という具体的な事業成果にコミットし、伴走します。</p>
-      </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">新卒採用<br>3年定着率<br>（金融会社事例）</div>
     </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FLOW -->
-<section class="sec sec-flow">
-  <div class="sec-label">PROCESS</div>
-  <div class="gold-bar"></div>
-  <h2 class="sec-title">プロデュースの流れ</h2>
-  <div class="flow-list">
-    <div class="flow-item">
-      <div class="flow-num">1</div>
-      <div class="flow-body">
-        <h3>無料個別相談（60分）</h3>
-        <p>現状の課題・事業目標をヒアリング。出版を活用した戦略の可能性を診断します。</p>
-      </div>
-    </div>
-    <div class="flow-item">
-      <div class="flow-num">2</div>
-      <div class="flow-body">
-        <h3>企画MTG・コンセプト設計</h3>
-        <p>ターゲット読者の設定、キーワード分析、書籍コンセプトの策定。「誰に、何を、なぜ」を言語化します。</p>
-      </div>
-    </div>
-    <div class="flow-item">
-      <div class="flow-num">3</div>
-      <div class="flow-body">
-        <h3>取材・原稿制作</h3>
-        <p>4〜5回のインタビューで素材を抽出。プロライターが代行執筆し、編集・校正まで対応します。</p>
-      </div>
-    </div>
-    <div class="flow-item">
-      <div class="flow-num">4</div>
-      <div class="flow-body">
-        <h3>出版・流通・広告スタート</h3>
-        <p>装丁・DTP・出版手続きから、書店配本・Amazon展開・広告運用まで一括で動きます。</p>
-      </div>
-    </div>
-    <div class="flow-item">
-      <div class="flow-num">5</div>
-      <div class="flow-body">
-        <h3>出版後の事業設計・伴走</h3>
-        <p>リード獲得導線・セミナー設計・高単価商品化まで、出版後の事業成果に向けて継続サポートします。</p>
-      </div>
+    <div class="stat-item" style="grid-column:1 / -1;">
+      <div class="stat-num">1,000万</div>
+      <div class="stat-label">初年度営業利益/月<br>（勤務医事例）</div>
     </div>
   </div>
 </section>
@@ -826,202 +932,114 @@
 <div class="divider"></div>
 
 <!-- CASES -->
-<section class="sec sec-cases">
+<section class="sec sec-cases-new">
   <div class="sec-label">CASE STUDY</div>
   <div class="gold-bar"></div>
-  <h2 class="sec-title">実績・事例</h2>
-  <p class="sec-lead">出版後、事業が変わった5つのストーリー。</p>
-  <div class="case-list">
+  <h2 class="sec-title">本を「使った」<br>経営者の成果</h2>
+  <p class="sec-lead">業界も規模も違う。本の使い方を知っていた、ただそれだけだ。</p>
 
-    <div class="case-card">
-      <div class="case-head">
-        <div class="case-tag">CASE 01 ／ カウンセリング</div>
-        <h3>パニック障害専門カウンセラー</h3>
-      </div>
-      <div class="case-img">
-        <!-- 画像を入れる場合: <img src="case01.jpg" alt="CASE 01"> -->
-        <span class="case-img-placeholder">IMAGE AREA</span>
-      </div>
-      <div class="case-body">
-        <p class="case-challenge">電子書籍では反応ゼロ。検索数もなく、信頼の獲得方法に行き詰まっていた。</p>
-        <div class="case-grid">
-          <div class="case-kpi">
-            <div class="case-kpi-num">11週</div>
-            <div class="case-kpi-label">Amazon<br>連続1位</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">1,000名</div>
-            <div class="case-kpi-label">セミナー<br>集客数</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">▲2/3</div>
-            <div class="case-kpi-label">広告費<br>削減</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">TV出演</div>
-            <div class="case-kpi-label">キー局<br>3番組</div>
-          </div>
-        </div>
-      </div>
+  <div class="case-group">
+    <div class="case-category">
+      <span class="case-category-label">売上</span>
+      <div class="case-category-line"></div>
     </div>
-
-    <div class="case-card">
-      <div class="case-head">
-        <div class="case-tag">CASE 02 ／ 教育・英語塾</div>
-        <h3>オンライン英語塾 代表</h3>
-      </div>
-      <div class="case-img">
-        <!-- 画像を入れる場合: <img src="case02.jpg" alt="CASE 02"> -->
-        <span class="case-img-placeholder">IMAGE AREA</span>
-      </div>
-      <div class="case-body">
-        <p class="case-challenge">学生起業で自費出版に挑戦するも効果なし。ブランド確立の打開策が必要だった。</p>
-        <div class="case-grid">
-          <div class="case-kpi">
-            <div class="case-kpi-num">1位</div>
-            <div class="case-kpi-label">英語検定部門<br>Amazon</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">ABEMA</div>
-            <div class="case-kpi-label">定番<br>コメンテーター</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">日経等</div>
-            <div class="case-kpi-label">大手メディア<br>多数掲載</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">大手出版</div>
-            <div class="case-kpi-label">商業出版<br>オファー獲得</div>
-          </div>
-        </div>
-      </div>
+    <div class="case-card-new">
+      <div class="case-card-num">01</div>
+      <div class="case-card-who">勤務医 × 不動産</div>
+      <div class="case-card-result">営業利益<span>1,000万円/月</span>を<br>稼働1人で常態化</div>
+      <p class="case-card-body">「医師×不動産」という誰もいない市場を設計。ベストセラーではなく届けたい人に届く本をつくった結果、初年度から月1,000万円の営業利益を1人で達成。現在は宿泊施設の共同経営にまで事業が派生している。</p>
     </div>
+  </div>
 
-    <div class="case-card">
-      <div class="case-head">
-        <div class="case-tag">CASE 03 ／ 医師×不動産講師</div>
-        <h3>医師専門の不動産講座 代表</h3>
-      </div>
-      <div class="case-img">
-        <!-- 画像を入れる場合: <img src="case03.jpg" alt="CASE 03"> -->
-        <span class="case-img-placeholder">IMAGE AREA</span>
-      </div>
-      <div class="case-body">
-        <p class="case-challenge">知名度ゼロの町の整形外科医が、不動産投資教育の権威になるための戦略が必要だった。</p>
-        <div class="case-grid">
-          <div class="case-kpi">
-            <div class="case-kpi-num">1,000万</div>
-            <div class="case-kpi-label">月平均<br>営業利益</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">200名</div>
-            <div class="case-kpi-label">毎月の<br>受講者数</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">No.1</div>
-            <div class="case-kpi-label">医師向け<br>不動産ポジション</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">1年</div>
-            <div class="case-kpi-label">達成までの<br>期間</div>
-          </div>
-        </div>
-      </div>
+  <div class="case-group">
+    <div class="case-category">
+      <span class="case-category-label">認知度向上</span>
+      <div class="case-category-line"></div>
     </div>
-
-    <div class="case-card">
-      <div class="case-head">
-        <div class="case-tag">CASE 04 ／ 不動産</div>
-        <h3>インバウンド向け不動産会社 代表</h3>
-      </div>
-      <div class="case-img">
-        <!-- 画像を入れる場合: <img src="case04.jpg" alt="CASE 04"> -->
-        <span class="case-img-placeholder">IMAGE AREA</span>
-      </div>
-      <div class="case-body">
-        <p class="case-challenge">過去4作品を出版するも成果なし。ROIの改善と実売上への貢献が課題だった。</p>
-        <div class="case-grid">
-          <div class="case-kpi">
-            <div class="case-kpi-num">3億円</div>
-            <div class="case-kpi-label">取引<br>売上額</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">▲50%</div>
-            <div class="case-kpi-label">広告費<br>削減</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">2〜3倍</div>
-            <div class="case-kpi-label">媒介<br>契約率</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">▲1/2</div>
-            <div class="case-kpi-label">新規顧客<br>獲得単価</div>
-          </div>
-        </div>
-      </div>
+    <div class="case-card-new">
+      <div class="case-card-num">02</div>
+      <div class="case-card-who">塾経営者（学生起業）</div>
+      <div class="case-card-result">実績ゼロから<br><span>業界屈指のインフルエンサー</span>へ</div>
+      <p class="case-card-body">「受験合格を目的とする塾」という常識を壊し、子どもの幸せな人生を軸にしたDifferentな問いを本にした。大手ウェブメディアからコメンテーター出演オファーが相次ぎ、わずか3年で業界の顔に。</p>
     </div>
+  </div>
 
-    <div class="case-card">
-      <div class="case-head">
-        <div class="case-tag">CASE 05 ／ キャリア支援</div>
-        <h3>教員向け転職コーチング 代表</h3>
-      </div>
-      <div class="case-img">
-        <!-- 画像を入れる場合: <img src="case05.jpg" alt="CASE 05"> -->
-        <span class="case-img-placeholder">IMAGE AREA</span>
-      </div>
-      <div class="case-body">
-        <p class="case-challenge">SNS集客のみでは質・量ともに苦戦。冷やかしが多く成約率が伸び悩んでいた。</p>
-        <div class="case-grid">
-          <div class="case-kpi">
-            <div class="case-kpi-num">1.5倍</div>
-            <div class="case-kpi-label">年商<br>拡大</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">70〜80%</div>
-            <div class="case-kpi-label">セールス<br>成約率</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">80%</div>
-            <div class="case-kpi-label">見込み客の<br>読者率</div>
-          </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">官公庁</div>
-            <div class="case-kpi-label">企業研修<br>依頼殺到</div>
-          </div>
-        </div>
-      </div>
+  <div class="case-group">
+    <div class="case-category">
+      <span class="case-category-label">採用</span>
+      <div class="case-category-line"></div>
     </div>
+    <div class="case-card-new">
+      <div class="case-card-num">03</div>
+      <div class="case-card-who">地方・独立系 金融会社</div>
+      <div class="case-card-result">新卒採用<span>3年定着率100%</span>を<br>毎年継続</div>
+      <p class="case-card-body">知名度ゼロ、大手に流れる業界で、本1冊が「母集団不要」を実現。100年後を見据えた経営哲学を言語化したことで、価値観に深く共鳴する人材だけが応募してくる採用構造をつくった。</p>
+    </div>
+    <div class="case-card-new">
+      <div class="case-card-num">04</div>
+      <div class="case-card-who">医療法人グループ</div>
+      <div class="case-card-result">急拡大する組織の<br><span>理念浸透と採用</span>を同時解決</div>
+      <p class="case-card-body">全国展開で数千名規模になった組織が直面した「魂の希薄化」を、経営哲学の書籍化で解決。価値観に共感できない社員が離れ、残ったメンバーの目つきが変わった。組織の純度が一気に高まった。</p>
+    </div>
+  </div>
 
+  <div class="case-group">
+    <div class="case-category">
+      <span class="case-category-label">事業承継 / 組織</span>
+      <div class="case-category-line"></div>
+    </div>
+    <div class="case-card-new">
+      <div class="case-card-num">05</div>
+      <div class="case-card-who">地方・老舗 菓子メーカー</div>
+      <div class="case-card-result">創業者の「暗黙知」を資産化し<br><span>100年企業</span>への土台を構築</div>
+      <p class="case-card-body">後継者が創業者の意思を一冊に可視化。本が承継の正当性を証明し、未経験の新卒者が品質管理を担えるまでに組織が変わった。老舗の伝統と革新を両立させ、地域のアイコン的企業へ。</p>
+    </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- METRICS -->
-<section class="sec sec-metrics">
-  <div class="sec-label">RESULTS</div>
+<!-- HOW -->
+<section class="sec sec-how">
+  <div class="sec-label">OUR APPROACH</div>
   <div class="gold-bar"></div>
-  <h2 class="sec-title">支援全体の<br>平均成果指標</h2>
-  <div class="metrics-grid">
-    <div class="metric-box">
-      <div class="metric-num">+3,000万</div>
-      <div class="metric-label">平均売上増分（年）</div>
+  <h2 class="sec-title">新流舎が提供するのは、<br>「本の使い方」の設計です。</h2>
+  <p class="how-body-text">本をつくって終わりにしない。経営課題に直結する目的を定め、届けたい人への届け方まで一貫して設計する。それが新流舎のIPプロデュースです。</p>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-step-num">01</div>
+      <h3 class="how-step-title">目的の設計</h3>
+      <p class="how-step-body">売上・採用・組織・承継。何のための本かを明確にする。</p>
     </div>
-    <div class="metric-box">
-      <div class="metric-num">2〜3倍</div>
-      <div class="metric-label">商談化率・成約率</div>
+    <div class="how-step">
+      <div class="how-step-num">02</div>
+      <h3 class="how-step-title">コンテンツの掘り起こし</h3>
+      <p class="how-step-body">経営者の暗黙知をIPとして言語化する。</p>
     </div>
-    <div class="metric-box">
-      <div class="metric-num">▲30〜60%</div>
-      <div class="metric-label">広告費削減効果</div>
-    </div>
-    <div class="metric-box">
-      <div class="metric-num">40%</div>
-      <div class="metric-label">メディア出演率</div>
+    <div class="how-step">
+      <div class="how-step-num">03</div>
+      <h3 class="how-step-title">届け方の設計</h3>
+      <p class="how-step-body">出版後の活用まで含めた戦略を組む。</p>
     </div>
   </div>
-  <p class="metric-note">※成果は一例であり、事業規模・市場環境により異なります</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRODUCER -->
+<section class="sec sec-profile">
+  <div class="sec-label">PRODUCER</div>
+  <div class="gold-bar"></div>
+  <h2 class="sec-title">代表プロデューサー</h2>
+  <div class="profile-box">
+    <div class="profile-icon"><img src="shiroyamasan.png" alt="代表プロデューサー"></div>
+    <div class="profile-role">新流舎 代表 / 出版IPプロデューサー</div>
+    <div class="profile-name">白山 裕彬</div>
+    <div class="profile-name-en">HIROAKI SHIROYAMA</div>
+    <p class="profile-bio">
+      出版社で編集長を長年務め、10万部超のベストセラーを10年以上にわたり毎年企画・制作。独立後は経営者の暗黙知をIPとして言語化し、本を経営に実装するコンサルティングを展開。一部上場企業から個人事業主まで、数百人の経営者と向き合ってきた。
+    </p>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -1032,55 +1050,34 @@
   <div class="gold-bar"></div>
   <h2 class="sec-title">よくあるご質問</h2>
   <div class="faq-list">
-
     <div class="faq-item">
       <div class="faq-q">
-        <span class="faq-q-text">文章を書いたことがなくても大丈夫ですか？</span>
+        <span class="faq-q-text">商業出版でないとダメですか？</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">問題ありません。インタビュー取材（4〜5回）でお話しいただいた内容を、プロのライターが原稿に仕上げます。あなたが担当するのは取材対応・原稿確認のみ。本業への影響を最小限に抑えながら出版まで伴走します。</div>
+      <div class="faq-a">目的によります。新流舎では商業出版・企業出版・自費出版の枠にとらわれず、経営課題の解決に最適な形を提案します。</div>
     </div>
-
     <div class="faq-item">
       <div class="faq-q">
-        <span class="faq-q-text">出版にかかる期間はどのくらいですか？</span>
+        <span class="faq-q-text">本を出したことがなくても大丈夫ですか？</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">企画確定から最短6ヶ月での出版を目指します。一般的な商業出版では1〜2年かかることが多い中、制作・流通を一貫して管理するため、スピードと品質を両立しています。</div>
+      <div class="faq-a">問題ありません。むしろ出版の常識に縛られていない方が、目的に沿った本をつくりやすいケースもあります。</div>
     </div>
-
     <div class="faq-item">
       <div class="faq-q">
-        <span class="faq-q-text">ベストセラーを目指すサービスですか？</span>
+        <span class="faq-q-text">どんな業種でも対応できますか？</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">いいえ。「本を売ること」ではなく、「本を使って経営課題を解決すること」が目的です。部数よりも読者の質・成約率・事業成果にコミットします。あなたの本の「使い道」を一緒に設計するサービスです。</div>
+      <div class="faq-a">はい。医療・金融・飲食・教育・製造など、業種を問わず対応しています。</div>
     </div>
-
     <div class="faq-item">
       <div class="faq-q">
-        <span class="faq-q-text">費用の目安を教えてください</span>
+        <span class="faq-q-text">費用はどのくらいかかりますか？</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">伴走型のコンサルティングプラン（月額）と、出版から事業設計まで一括のパッケージプランの2種類があります。詳細は個別相談にてお伝えします。まずはお気軽にご相談ください。</div>
+      <div class="faq-a">目的・規模・出版形態によって異なります。まずは無料相談でご状況をお聞かせください。</div>
     </div>
-
-    <div class="faq-item">
-      <div class="faq-q">
-        <span class="faq-q-text">すでに本を出版したことがありますが相談できますか？</span>
-        <span class="faq-icon">+</span>
-      </div>
-      <div class="faq-a">はい。「出版したが成果につながらなかった」というご相談も多くいただいています。過去の出版を起点に、営業導線・事業設計を見直すところから支援できます。</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">
-        <span class="faq-q-text">どんな業種・規模の会社が対象ですか？</span>
-        <span class="faq-icon">+</span>
-      </div>
-      <div class="faq-a">年商1億〜30億規模の中小企業経営者、士業、専門家、コンサルタントの方が主な対象です。業種は問いません。ただし、単純に集客したい方・ベストセラーを目指したい方ではなく、出版を通じて経営課題を根本から解決したいという方向けのサービスです。</div>
-    </div>
-
   </div>
 </section>
 
