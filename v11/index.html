@@ -25,7 +25,7 @@
 
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      background: var(--navy);
+      background: var(--navy-mid);
       color: var(--white);
       max-width: 430px;
       margin: 0 auto;
@@ -103,14 +103,28 @@
       padding: 72px 28px;
       text-align: center;
     }
+    .sec-bridge-2 {
+      background:
+        linear-gradient(to bottom,
+          var(--navy) 0%,
+          rgba(11,13,20,0) 22%,
+          rgba(11,13,20,0) 78%,
+          var(--navy) 100%),
+        linear-gradient(rgba(8,9,14,0.78), rgba(11,13,20,0.72)),
+        url('bridge-bg-2.jpg') center/cover no-repeat;
+    }
     .bridge-text {
       font-family: 'Noto Serif JP', serif;
       font-size: 22px;
       font-weight: 600;
       color: var(--gold-light);
-      line-height: 1.7;
+      line-height: 1.75;
       letter-spacing: 0.04em;
       text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+    }
+    .bridge-text em {
+      font-style: normal;
+      color: var(--gold);
     }
 
     /* ─── STORY ─── */
@@ -133,15 +147,28 @@
       background: rgba(201,168,92,0.06);
       margin: 28px 0;
     }
-    .story-conclusion {
+    .story-sub {
       font-family: 'Noto Serif JP', serif;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 600;
-      color: var(--gold);
-      line-height: 1.7;
+      color: var(--gold-light);
+      line-height: 1.6;
+      letter-spacing: 0.06em;
+      margin: 36px 0 18px;
       padding-top: 24px;
       border-top: 1px solid rgba(201,168,92,0.2);
-      margin-top: 24px;
+    }
+    .story-conclusion {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 53px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.45;
+      letter-spacing: 0.03em;
+      padding: 36px 24px;
+      margin-top: 36px;
+      border-left: 3px solid var(--gold);
+      background: rgba(201,168,92,0.07);
     }
 
     /* ─── TWIST ─── */
@@ -165,20 +192,31 @@
       margin: 28px 0;
       display: flex;
       flex-direction: column;
+      background:
+        linear-gradient(rgba(8,10,18,0.86), rgba(11,13,20,0.84)),
+        url('regret.jpg') center/cover no-repeat;
+      padding: 6px 22px;
+      border-left: 3px solid var(--gold);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.5);
     }
     .twist-failures li {
-      font-size: 14px;
-      color: var(--white-dim);
+      font-size: 14.5px;
+      color: var(--white);
       padding: 16px 0;
-      border-bottom: 1px solid rgba(201,168,92,0.1);
+      border-bottom: 1px solid rgba(201,168,92,0.15);
       display: flex;
       align-items: flex-start;
       gap: 14px;
+      line-height: 1.75;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.4);
     }
-    .twist-failures li:first-child { border-top: 1px solid rgba(201,168,92,0.1); }
+    .twist-failures li:last-child { border-bottom: none; }
     .twist-failures li::before {
-      content: '—';
+      content: '×';
       color: var(--gold);
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 1.5;
       flex-shrink: 0;
     }
     .twist-conclusion {
@@ -223,32 +261,51 @@
     }
     .stats-grid {
       margin-top: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      background: rgba(201,168,92,0.15);
-      border-radius: 4px;
-      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px;
     }
     .stat-item {
-      background: var(--navy);
-      padding: 24px 22px;
+      background: transparent;
+      padding: 16px 6px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      align-items: center;
+      text-align: center;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+    }
+    .stat-cat {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      color: var(--white);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(201,168,92,0.3);
+      width: 100%;
     }
     .stat-num {
       font-family: 'Noto Serif JP', serif;
-      font-size: 36px;
+      font-size: 24px;
       color: var(--gold);
-      line-height: 1;
+      font-weight: 600;
+      line-height: 1.15;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .stat-suffix {
+      font-size: 0.55em;
       font-weight: 400;
+      margin-left: 2px;
     }
     .stat-label {
-      font-size: 12px;
+      font-size: 10.5px;
       color: var(--white-dim);
-      font-weight: 300;
-      line-height: 1.6;
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: center;
     }
 
     /* ─── PROBLEM ─── */
@@ -325,11 +382,19 @@
     }
     .prob-conclusion p {
       font-family: 'Noto Serif JP', serif;
-      font-size: 15px;
-      line-height: 1.9;
-      color: var(--white);
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--white-dim);
     }
-    .prob-conclusion p span { color: var(--gold); }
+    .prob-conclusion p span {
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.7;
+      letter-spacing: 0.03em;
+      margin-top: 14px;
+    }
 
     /* ─── CASES ─── */
     .sec-cases { background: var(--navy-mid); }
@@ -377,6 +442,15 @@
       line-height: 1.6;
     }
     .case-body { padding: 18px; }
+    .case-sub {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.55;
+      margin-bottom: 14px;
+      letter-spacing: 0.02em;
+    }
     .case-challenge {
       font-size: 13px;
       color: var(--muted);
@@ -563,8 +637,15 @@
 
     /* ─── CTA ─── */
     .sec-cta {
-      background: var(--navy);
-      padding: 64px 24px;
+      background:
+        linear-gradient(to bottom,
+          var(--navy) 0%,
+          rgba(11,13,20,0) 18%,
+          rgba(11,13,20,0) 82%,
+          var(--navy) 100%),
+        linear-gradient(rgba(8,9,14,0.84), rgba(11,13,20,0.80)),
+        url('cta-bg.jpg') right center/cover no-repeat;
+      padding: 72px 24px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -583,17 +664,20 @@
       font-weight: 600;
       line-height: 1.75;
       margin-bottom: 20px;
+      color: var(--gold-light);
+      text-shadow: 0 2px 14px rgba(0,0,0,0.55);
     }
     .cta-text {
       font-size: 14px;
-      color: var(--white-dim);
+      color: var(--white);
       line-height: 2;
       margin-bottom: 40px;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.45);
     }
     .btn-main {
       display: block;
       width: 100%;
-      padding: 18px 20px;
+      padding: 16px 20px;
       background: linear-gradient(135deg, #d4aa5a, #9e7830);
       color: #fff;
       font-size: 16px;
@@ -603,6 +687,15 @@
       text-decoration: none;
       letter-spacing: 0.06em;
       margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .btn-sub {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      opacity: 0.85;
+      margin-top: 4px;
+      letter-spacing: 0.08em;
     }
     .btn-note { font-size: 12px; color: var(--muted); }
 
@@ -659,36 +752,70 @@
 <section class="sec sec-hook">
   <div class="sec-label">CASE</div>
   <div class="gold-bar"></div>
-  <h2 class="hook-title">無名の経営者が出版し、ひとりで<br>月営業利益<em>1,000万円</em>を常態化しました。<br>彼は何をしたのか？</h2>
+  <h2 class="hook-title">無名の経営者が出版し、ひとりで<br>月営業利益<em>1,000万円</em>を常態化。<br>彼は何をしたのか？</h2>
   <span class="hook-sub">scroll to discover ↓</span>
 </section>
 
-<div class="divider"></div>
-
 <!-- BRIDGE -->
 <section class="sec-bridge">
-  <p class="bridge-text">答えは、一冊の本でした。</p>
+  <p class="bridge-text">彼は「本」を使いました。</p>
 </section>
-
-<div class="divider"></div>
 
 <!-- STORY -->
 <section class="sec sec-story">
   <div class="sec-label">STORY</div>
   <div class="gold-bar"></div>
-  <h2 class="sec-title" style="font-size:22px;">「不動産で本業より稼げるようになったんです」</h2>
+  <h2 class="sec-title" style="font-size:20px;">「不動産で本業より稼げるようになったんです」</h2>
   <div class="story-text">
     <p>ある勤務医の話をします。</p>
-    <p>彼の日常は、深夜に救急搬送の呼び出しがあり、そのまま緊急手術に入り、翌朝から通常勤務が続きます。<br>単身赴任20年の上司を横目に「自分の人生、このままでいいのか」と思いながら働いていました。</p>
+    <p>彼の日常は、深夜に救急搬送の呼び出しがあり、そのまま緊急手術に入り、翌朝から通常勤務が続きます。<br>20年間も単身赴任をしている上司の背中を見ながら「自分の人生、このままでいいのか」と思いながら働いていました。</p>
   <img src="story.jpg" alt="" style="width:100%; margin:24px 0 28px; display:block;">
-    <p>お金の不安をなくそうと株やサイドビジネスを試しましたが、どれもうまくいきませんでした。そこで出会ったのが不動産でした。2019年に投資を始め、3年で家賃収入が医師の年収を超えました。今や家賃年収は3,000万円、総資産は3億円を超えています。それでも今も週の半分は病院に立っています。</p>
-    <p>ただ、同じ境遇の医師たちが悪徳業者に騙されるのを何度も見てきました。知識がないまま踏み出して、痛い目に遭っている人が多かったです。</p>
+    <p>将来への不安をなくしたくて、株やサイドビジネスに手を出しましたが、どれもうまくいきませんでした。そこで出会ったのが不動産でした。2019年に投資を始め、3年で家賃収入が医師の年収を超えました。今や家賃年収は3,000万円、総資産は3億円を超えています。</p>
+    <p>自分が成果をだせるようになるにつれて、見えてくるものがありました。同じ境遇の医師が悪徳業者に騙され、知識がないまま踏み出して痛い目に遭っている。その姿が他人事には思えませんでした。</p>
 
     <div class="story-quote">「このノウハウを医師仲間に伝えたい」</div>
 
     <p>その思いで本をつくりました。不動産インフルエンサーが乱立する市場に、「現役医師が医師だけに教える不動産投資」という切り口で入っていきました。同じことをしている人が、どこにもいませんでした。</p>
-    <p>動画教材と組み合わせてリリースすると界隈でバズりました。本を読んだ人だけが問い合わせてくるので、一から説明する必要がありません。初年度から営業利益1,000万円／月をコンスタントに達成し、稼働しているのは著者一人です。</p>
-    <p class="story-conclusion">「誰もいない場所」を選んだことが、そのまま強さになりました。</p>
+    <img src="realestate.jpg" alt="" style="width:100%; margin:24px 0 28px; display:block;">
+    <p>動画教材と組み合わせてリリースすると界隈でバズりました。初年度から営業利益1,000万円／月を達成し、稼働しているのは著者一人です。</p>
+    <p class="story-conclusion">「誰もいない場所」を選んだことが、そのまま強さになった。</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROBLEM -->
+<section class="sec sec-problem">
+  <div class="sec-label">THE PROBLEM</div>
+  <div class="gold-bar"></div>
+  <p style="font-size:14px; color:var(--white-dim); line-height:1.95; margin-bottom:16px;">「本を出版して誰もいない場所を選んだ」<br>——簡単に言えばそうなります。</p>
+  <h2 class="twist-title">でも、多くの経営者が<br>同じことをしようとして、<br>失敗しています。</h2>
+  <ul class="prob-list">
+    <li class="prob-item">
+      <span class="prob-num">01</span>
+      <span class="prob-text">競合と比べられ、品質では負けていないのに価格交渉をされる。</span>
+    </li>
+    <li class="prob-item">
+      <span class="prob-num">02</span>
+      <span class="prob-text">広告を止めると集客が止まり、毎月ゼロから始まる消耗戦が続いている。</span>
+    </li>
+    <li class="prob-item">
+      <span class="prob-num">03</span>
+      <span class="prob-text">自分が動けば売れる。でも、自分がいないと回らない構造から抜け出せない。</span>
+    </li>
+    <li class="prob-item">
+      <span class="prob-num">04</span>
+      <span class="prob-text">「良さは会えばわかる」のに、そこまでたどり着かない見込み客が多すぎる。</span>
+    </li>
+    <li class="prob-item">
+      <span class="prob-num">05</span>
+      <span class="prob-text">このままスケールしていいのか？次のステージに進む方法が見えない。</span>
+    </li>
+  </ul>
+  <img src="busy.jpg" alt="" style="width:100%; margin:24px 0 0; display:block; border-radius:4px;">
+
+  <div class="prob-conclusion">
+    <p>消耗の原因は、努力不足ではありません。<br><span>「選ばれる理由」を伝えられる構造を持っていないからです。</span></p>
   </div>
 </section>
 
@@ -698,7 +825,7 @@
 <section class="sec sec-twist">
   <div class="sec-label">THE TWIST</div>
   <div class="gold-bar"></div>
-  <h2 class="twist-title">でも、本を出しただけでは、<br>何も変わりません。</h2>
+  <h2 class="twist-title">では、本を出せば<br>解決するのか。</h2>
   <div class="twist-body">
     <p>出版社は本づくりのプロです。でも、本の使い方は教えてくれません。彼らのビジネスは「本をつくること」であって、「あなたの会社の構造を変えること」ではないからです。</p>
     <p>実際、出版後に後悔する経営者は後を絶ちません。</p>
@@ -709,13 +836,13 @@
     </ul>
     <p>ベストセラーになれば成功、ならなければ失敗。そう思っている経営者ほど、本の力を使いきれていません。</p>
     <p>本をうまく活用している経営者には共通点があります。ブランディングしたい、PRしたい、有名になりたいという短期的な目的で本をつくっていません。経営戦略に紐づけた明確な意図をもって、本を「使って」います。</p>
-    <div class="twist-conclusion">
-      本は出して終わりではありません。<br>むしろ、<em>出版からが本番</em>です。
-    </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<!-- BRIDGE 2 -->
+<section class="sec-bridge sec-bridge-2">
+  <p class="bridge-text">本は出して終わりではありません。<br>むしろ、<em>出版からが本番</em>です。</p>
+</section>
 
 <!-- INSIGHT -->
 <section class="sec sec-insight">
@@ -724,61 +851,25 @@
   <h2 class="insight-title">本の使い方を知っている経営者だけが、<br>会社の構造を変えられます。</h2>
   <div class="insight-body">
     <p>あの医師が手に入れたのは、ベストセラーではありませんでした。「誰もいない市場」でした。</p>
-    <p>本を出したことで、比較する相手がいなくなりました。説明しなくても伝わる顧客だけが来るようになりました。価格交渉をされなくなりました。自分がいなくても回る仕組みが生まれました。</p>
-    <p>これをIPと呼びます。知識でも技術でもなく、<strong>「あなたでなければならない理由」を構造にしたもの</strong>です。</p>
-    <p>本は、そのIPをつくるための手段です。売れるかどうかより、誰に届くかを設計する。届け方まで考えて初めて、本は経営の武器になります。</p>
-    <p class="insight-note">※ IP（Intellectual Property＝知的財産）とは、著者の知識・経験・思想を形にした資産のことです。</p>
+    <p>本を出したことで、比較する相手がいなくなりました。説明しなくても伝わる顧客だけが来るようになりました。自分がいなくても回る仕組みが生まれました。</p>
+    <p>これをIP化と呼びます。※ IP（Intellectual Property＝知的財産）とは、著者の知識・経験・思想を形にした資産のことです。<strong>「あなたが選ばれる理由」を構造にすること——それがIP化です。</strong>本は、そのための手段です。売れるかどうかより、誰に届くかを設計する。届け方まで考えて初めて、本は経営の武器になります。</p>
   </div>
   <div class="stats-grid">
     <div class="stat-item">
-      <span class="stat-num">30–50%</span>
-      <span class="stat-label">本経由の顧客獲得単価（CPA）削減</span>
+      <span class="stat-cat">CPA</span>
+      <span class="stat-num">30〜50%<span class="stat-suffix">削減</span></span>
+      <span class="stat-label">本経由の顧客獲得単価</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">2–3倍</span>
-      <span class="stat-label">本の読者からの成約率向上</span>
+      <span class="stat-cat">成約率</span>
+      <span class="stat-num">2〜3倍</span>
+      <span class="stat-label">本の読者からの成約率</span>
     </div>
     <div class="stat-item">
+      <span class="stat-cat">稼働</span>
       <span class="stat-num">1人</span>
-      <span class="stat-label">IPで構造化した事業モデルの稼働人数</span>
+      <span class="stat-label">IPで構造化した事業モデルの実例</span>
     </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PROBLEM -->
-<section class="sec sec-problem">
-  <div class="sec-label">THE PROBLEM</div>
-  <div class="gold-bar"></div>
-  <h2 class="sec-title">でも、多くの経営者は<br>まだ消耗戦の中にいます。</h2>
-  <p class="prob-intro-sub">うまくいっています。でも、なぜか楽にならない。<br>あなたにも、思い当たることはありませんか。</p>
-
-  <ul class="prob-list">
-    <li class="prob-item">
-      <span class="prob-num">01</span>
-      <span class="prob-text">競合と比べられ、価格交渉をされます。品質では負けていないのに、値下げを求められます。</span>
-    </li>
-    <li class="prob-item">
-      <span class="prob-num">02</span>
-      <span class="prob-text">広告を止めると集客が止まります。毎月ゼロから始まる消耗戦が続いています。</span>
-    </li>
-    <li class="prob-item">
-      <span class="prob-num">03</span>
-      <span class="prob-text">自分が動けば売れます。でも、自分がいないと回らない構造から抜け出せません。</span>
-    </li>
-    <li class="prob-item">
-      <span class="prob-num">04</span>
-      <span class="prob-text">「良さは会えばわかる」のに、そこまでたどり着かない見込み客が多すぎます。</span>
-    </li>
-    <li class="prob-item">
-      <span class="prob-num">05</span>
-      <span class="prob-text">このままスケールしていいのか。売上は上がっても、何かが違う気がしています。</span>
-    </li>
-  </ul>
-
-  <div class="prob-conclusion">
-    <p>消耗の原因は、努力不足ではありません。<br><span>「あなたでなければならない理由」が、まだ構造になっていないからです。</span></p>
   </div>
 </section>
 
@@ -788,16 +879,17 @@
 <section class="sec sec-cases">
   <div class="sec-label">CASE STUDY</div>
   <div class="gold-bar"></div>
-  <h2 class="case-intro">どんな業界でも、<br>構造は同じです。</h2>
+  <h2 class="case-intro">他にも本の「使い方」を<br>変えた経営者たちがいます。</h2>
 
   <div class="case-list">
     <div class="case-card">
       <div class="case-head">
-        <div class="case-tag">CASE 01 ／ IT会社 × コンサルティング × 新規事業</div>
-        <h3>「IT会社」というラベルを脱ぎ、<br>数億円規模の案件を10件以上受注しました</h3>
+        <div class="case-tag">CASE 01 ／ IT会社 × コンサルティング</div>
       </div>
+      <img src="lecture.jpg" alt="" style="width:100%; display:block;">
       <div class="case-body">
-        <p class="case-challenge">革命的なサービスも、「IT会社」というラベルのせいで伝わりませんでした。出版で動機・専門性・実績を体系化し、出版記念講演会を満席にした結果、「御社にしか頼めない」という顧客だけが集まりました。</p>
+        <h4 class="case-sub">「IT会社」から「コンサル会社」へ</h4>
+        <p class="case-challenge">出版で著者の想いや専門性、実績を体系化できるように設計し、出版記念講演会につなげました。その結果、「御社にしか頼めない」という顧客だけが集まり、数億円規模のコンサル案件が10件以上成立しました。</p>
         <div class="case-kpi-row">
           <div class="case-kpi">
             <div class="case-kpi-num">満席</div>
@@ -813,11 +905,12 @@
 
     <div class="case-card">
       <div class="case-head">
-        <div class="case-tag">CASE 02 ／ カウンセラー × 個人事業 × メディア展開</div>
-        <h3>Google検索ゼロから、出版2ヶ月で<br>テレビキー局からオファーが届きました</h3>
+        <div class="case-tag">CASE 02 ／ カウンセラー × 個人事業</div>
       </div>
+      <img src="counselor.jpg" alt="" style="width:100%; display:block;">
       <div class="case-body">
-        <p class="case-challenge">「独自メソッドなんてない」と語っていたカウンセラーが、出版を起点に業界内で一流と認知されました。テレビ出演、養成スクール、カウンセリングルーム開設——1年で事業が次々と派生しています。</p>
+        <h4 class="case-sub">「無名カウンセラー」から「業界の一流」へ</h4>
+        <p class="case-challenge">出版で「業界内でのポジション確立」を設計しました。その結果、「独自メソッドなんてない」と語っていたカウンセラーが、業界内で一流と認知されました。出版2ヶ月でテレビキー局からオファー、1年で3事業を展開しています。</p>
         <div class="case-kpi-row">
           <div class="case-kpi">
             <div class="case-kpi-num">2ヶ月</div>
@@ -835,7 +928,7 @@
   <div style="margin-top:40px; text-align:left; padding:32px 20px; background:rgba(255,255,255,0.03); border-top:1px solid rgba(201,168,92,0.2);">
     <p style="font-family:'Noto Serif JP',serif; font-size:17px; font-weight:600; color:var(--white); line-height:1.8; margin-bottom:6px;">あなたの会社でも、<br>同じことが起きるかもしれません。</p>
     <p style="font-size:14px; color:var(--white-dim); line-height:1.8; margin-bottom:24px;">まず、話だけ聞いてみませんか。</p>
-    <a href="#" class="btn-main">LINEで無料相談する ▶</a>
+    <a href="#" class="btn-main">まずは気軽に話してみる ▶<span class="btn-sub">LINE登録はこちら</span></a>
     <p style="font-size:11px; color:var(--muted); margin-top:8px;">完全無料 ・ 強引な営業なし ・ 秘密厳守</p>
   </div>
 </section>
@@ -1040,9 +1133,9 @@
 <!-- FINAL CTA -->
 <section class="sec-cta">
   <div class="sec-label" style="margin-bottom:20px;">IP戦略プロデュース</div>
-  <h2 class="cta-title">あなたの会社だけの<br>「本の使い方」を、<br>一緒に考えませんか。</h2>
+  <h2 class="cta-title">あなたの会社だけの「本の使い方」<br>一緒に考えましょう。</h2>
   <p class="cta-text">出版が自社に合うかどうか、まだわからなくて大丈夫です。まずはLINEから、気軽に相談してみてください。無理な売り込みは一切しません。</p>
-  <a href="#" class="btn-main">無料個別相談はLINEから ▶</a>
+  <a href="#" class="btn-main">まずは気軽に話してみる ▶<span class="btn-sub">LINE登録はこちら</span></a>
   <p class="btn-note">完全無料 ・ 強引な営業なし ・ 秘密厳守</p>
 </section>
 
@@ -1053,7 +1146,7 @@
 
 <!-- FIXED BAR -->
 <div class="fixed-bar">
-  <a href="#">無料個別相談はLINEから ▶</a>
+  <a href="#">まずは気軽に話してみる ▶<span class="btn-sub">LINE登録はこちら</span></a>
 </div>
 
 <script>
