@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>出版IPプロデュース | 新流舎</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0b0d14;
+      --navy-mid:   #10121c;
+      --navy-light: #171a28;
+      --gold:       #c9a85c;
+      --gold-light: #e8d5a3;
+      --gold-dark:  #8a6c2e;
+      --white:      #f0ece2;
+      --white-dim:  #b5ab98;
+      --muted:      #6a6258;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--navy-mid);
+      color: var(--white);
+      max-width: 430px;
+      margin: 0 auto;
+      overflow-x: hidden;
+      padding-bottom: 64px;
+    }
+
+    /* ─── HERO ─── */
+    .hero { width: 100%; }
+    .hero img { width: 100%; display: block; }
+
+    /* ─── SECTION BASE ─── */
+    .sec { padding: 64px 24px; }
+    .sec-label {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .gold-bar {
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 20px;
+    }
+    .sec-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 1.65;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,168,92,0.3), transparent);
+    }
+
+    /* ─── HOOK ─── */
+    .sec-hook {
+      background: var(--navy-mid);
+      padding: 56px 28px;
+    }
+    .hook-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .hook-title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hook-sub {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      margin-top: 16px;
+      display: block;
+    }
+
+    /* ─── BRIDGE ─── */
+    .sec-bridge {
+      background:
+        linear-gradient(to bottom,
+          var(--navy) 0%,
+          rgba(11,13,20,0) 22%,
+          rgba(11,13,20,0) 78%,
+          var(--navy) 100%),
+        linear-gradient(rgba(8,9,14,0.78), rgba(11,13,20,0.72)),
+        url('bridge-bg.jpg') center/cover no-repeat;
+      padding: 72px 28px;
+      text-align: center;
+    }
+    .sec-bridge-2 {
+      background:
+        linear-gradient(to bottom,
+          var(--navy) 0%,
+          rgba(11,13,20,0) 22%,
+          rgba(11,13,20,0) 78%,
+          var(--navy) 100%),
+        linear-gradient(rgba(8,9,14,0.78), rgba(11,13,20,0.72)),
+        url('bridge-bg-2.jpg') center/cover no-repeat;
+    }
+    .bridge-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1.75;
+      letter-spacing: 0.04em;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+    }
+    .bridge-text em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    /* ─── STORY ─── */
+    .sec-story { background: var(--navy); }
+    .story-text p {
+      font-size: 14px;
+      line-height: 2.1;
+      color: var(--white-dim);
+      margin-bottom: 18px;
+    }
+    .story-text p:last-child { margin-bottom: 0; }
+    .story-quote {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.7;
+      padding: 20px;
+      border-left: 3px solid var(--gold);
+      background: rgba(201,168,92,0.06);
+      margin: 28px 0;
+    }
+    .story-sub {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1.6;
+      letter-spacing: 0.06em;
+      margin: 36px 0 18px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(201,168,92,0.2);
+    }
+    .story-conclusion {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 53px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.45;
+      letter-spacing: 0.03em;
+      padding: 36px 24px;
+      margin-top: 36px;
+      border-left: 3px solid var(--gold);
+      background: rgba(201,168,92,0.07);
+    }
+
+    /* ─── TWIST ─── */
+    .sec-twist { background: var(--navy-mid); }
+    .twist-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .twist-body p {
+      font-size: 14px;
+      line-height: 2.1;
+      color: var(--white-dim);
+      margin-bottom: 18px;
+    }
+    .twist-failures {
+      list-style: none;
+      margin: 28px 0;
+      display: flex;
+      flex-direction: column;
+      background:
+        linear-gradient(rgba(8,10,18,0.86), rgba(11,13,20,0.84)),
+        url('regret.jpg') center/cover no-repeat;
+      padding: 6px 22px;
+      border-left: 3px solid var(--gold);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    }
+    .twist-failures li {
+      font-size: 14.5px;
+      color: var(--white);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(201,168,92,0.15);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      line-height: 1.75;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+    }
+    .twist-failures li:last-child { border-bottom: none; }
+    .twist-failures li::before {
+      content: '×';
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 1.5;
+      flex-shrink: 0;
+    }
+    .twist-conclusion {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.7;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(201,168,92,0.15);
+    }
+    .twist-conclusion em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    /* ─── INSIGHT ─── */
+    .sec-insight { background: var(--navy); }
+    .insight-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 21px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .insight-body p {
+      font-size: 14px;
+      line-height: 2.1;
+      color: var(--white-dim);
+      margin-bottom: 18px;
+    }
+    .insight-body p strong { color: var(--white); font-weight: 500; }
+    .insight-note {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(201,168,92,0.15);
+    }
+    .stats-grid {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px;
+    }
+    .stat-item {
+      background: transparent;
+      padding: 16px 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+    }
+    .stat-cat {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      color: var(--white);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(201,168,92,0.3);
+      width: 100%;
+    }
+    .stat-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 24px;
+      color: var(--gold);
+      font-weight: 600;
+      line-height: 1.15;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .stat-suffix {
+      font-size: 0.55em;
+      font-weight: 400;
+      margin-left: 2px;
+    }
+    .stat-label {
+      font-size: 10.5px;
+      color: var(--white-dim);
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    /* ─── PROBLEM ─── */
+    .sec-problem {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .sec-problem::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0px, transparent 72px,
+          rgba(201,168,92,0.07) 72px, rgba(201,168,92,0.07) 75px
+        ),
+        repeating-linear-gradient(
+          to right,
+          transparent 0px, transparent 18px,
+          rgba(255,255,255,0.025) 18px, rgba(255,255,255,0.025) 19px,
+          transparent 19px, transparent 37px,
+          rgba(255,255,255,0.015) 37px, rgba(255,255,255,0.015) 38px,
+          transparent 38px, transparent 62px,
+          rgba(255,255,255,0.02) 62px, rgba(255,255,255,0.02) 63px,
+          transparent 63px, transparent 80px,
+          rgba(255,255,255,0.03) 80px, rgba(255,255,255,0.03) 81px
+        );
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .sec-problem > * { position: relative; z-index: 1; }
+    .prob-intro-sub {
+      font-size: 14px;
+      color: var(--white-dim);
+      line-height: 1.8;
+      margin-top: 8px;
+    }
+    .prob-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+    }
+    .prob-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(201,168,92,0.1);
+    }
+    .prob-item:first-child { border-top: 1px solid rgba(201,168,92,0.1); }
+    .prob-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: rgba(201,168,92,0.3);
+      flex-shrink: 0;
+      line-height: 1;
+      padding-top: 2px;
+    }
+    .prob-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--white-dim);
+    }
+    .prob-conclusion {
+      margin-top: 40px;
+      padding: 28px 24px;
+      border: 1px solid rgba(201,168,92,0.3);
+      border-left: 3px solid var(--gold);
+      background: rgba(201,168,92,0.04);
+    }
+    .prob-conclusion p {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--white-dim);
+    }
+    .prob-conclusion p span {
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.7;
+      letter-spacing: 0.03em;
+      margin-top: 14px;
+    }
+
+    /* ─── CASES ─── */
+    .sec-cases { background: var(--navy-mid); }
+    .case-intro {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.65;
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(201,168,92,0.15);
+    }
+    .case-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .case-card {
+      border: 1px solid rgba(201,168,92,0.35);
+      border-top: 3px solid var(--gold);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .case-head {
+      background: linear-gradient(135deg, rgba(201,168,92,0.14) 0%, rgba(201,168,92,0.04) 100%);
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(201,168,92,0.2);
+    }
+    .case-tag {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .case-head h3 {
+      font-size: 15px;
+      color: var(--white);
+      line-height: 1.6;
+    }
+    .case-body { padding: 18px; }
+    .case-sub {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.55;
+      margin-bottom: 14px;
+      letter-spacing: 0.02em;
+    }
+    .case-challenge {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.75;
+      padding-left: 12px;
+      border-left: 2px solid rgba(201,168,92,0.25);
+      margin-bottom: 16px;
+    }
+    .case-kpi-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .case-kpi {
+      text-align: left;
+      padding: 12px 10px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 4px;
+    }
+    .case-kpi-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      color: var(--gold);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .case-kpi-label {
+      font-size: 11px;
+      color: var(--white-dim);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    .sec-flow { background: var(--navy); }
+    .flow-list {
+      margin-top: 32px;
+      position: relative;
+    }
+    .flow-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .flow-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 42px;
+      bottom: -14px;
+      width: 1px;
+      background: linear-gradient(to bottom, rgba(201,168,92,0.5), transparent);
+    }
+    .flow-num {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .flow-body { padding-top: 8px; }
+    .flow-body h3 {
+      font-size: 15px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .flow-body p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--white-dim);
+    }
+
+    /* ─── COMPARISON ─── */
+    .sec-metrics { background: var(--navy-mid); }
+
+    /* ─── PROFILE ─── */
+    .sec-profile { background: var(--navy); }
+    .profile-box {
+      border: 1px solid rgba(201,168,92,0.22);
+      border-radius: 6px;
+      padding: 36px 24px;
+      margin-top: 32px;
+      text-align: center;
+    }
+    .profile-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      background: rgba(201,168,92,0.08);
+      margin: 0 auto 18px;
+      overflow: hidden;
+    }
+    .profile-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile-role {
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      margin-bottom: 4px;
+    }
+    .profile-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 24px;
+      color: var(--white);
+    }
+    .profile-name-en {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .profile-bio {
+      font-size: 14px;
+      line-height: 2;
+      color: var(--white-dim);
+      text-align: left;
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(201,168,92,0.15);
+    }
+
+    /* ─── FAQ ─── */
+    .sec-faq { background: var(--navy-mid); }
+    .faq-list {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .faq-item {
+      border: 1px solid rgba(201,168,92,0.15);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      background: rgba(255,255,255,0.02);
+      -webkit-tap-highlight-color: transparent;
+      width: 100%;
+      border: none;
+      text-align: left;
+    }
+    .faq-q-text {
+      font-size: 14px;
+      color: var(--white);
+      line-height: 1.6;
+      flex: 1;
+      padding-right: 12px;
+    }
+    .faq-icon {
+      color: var(--gold);
+      font-size: 22px;
+      line-height: 1;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .faq-a {
+      display: none;
+      padding: 0 20px 18px;
+      font-size: 14px;
+      color: var(--white-dim);
+      line-height: 1.95;
+      background: rgba(255,255,255,0.01);
+    }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* ─── CTA ─── */
+    .sec-cta {
+      background:
+        linear-gradient(to bottom,
+          var(--navy) 0%,
+          rgba(11,13,20,0) 18%,
+          rgba(11,13,20,0) 82%,
+          var(--navy) 100%),
+        linear-gradient(rgba(8,9,14,0.84), rgba(11,13,20,0.80)),
+        url('cta-bg.jpg') right center/cover no-repeat;
+      padding: 72px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .sec-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 180px; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+    .cta-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 23px;
+      font-weight: 600;
+      line-height: 1.75;
+      margin-bottom: 20px;
+      color: var(--gold-light);
+      text-shadow: 0 2px 14px rgba(0,0,0,0.55);
+    }
+    .cta-text {
+      font-size: 14px;
+      color: var(--white);
+      line-height: 2;
+      margin-bottom: 40px;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.45);
+    }
+    .btn-main {
+      display: block;
+      width: 100%;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #d4aa5a, #9e7830);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      border-radius: 2px;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .btn-sub {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      opacity: 0.85;
+      margin-top: 4px;
+      letter-spacing: 0.08em;
+    }
+    .btn-note { font-size: 12px; color: var(--muted); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #030609;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    footer p {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ─── FIXED BAR ─── */
+    .fixed-bar {
+      position: fixed;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 430px;
+      padding: 10px 16px;
+      background: rgba(6,11,24,0.95);
+      border-top: 1px solid rgba(201,168,92,0.2);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 200;
+    }
+    .fixed-bar a {
+      display: block;
+      padding: 13px;
+      background: linear-gradient(135deg, #d4aa5a, #9e7830);
+      color: #fff;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="hero.jpg" alt="比較されない。選ばれ続ける。｜新流舎 出版IPプロデュース">
+</div>
+
+<div class="divider"></div>
+
+<!-- HOOK -->
+<section class="sec sec-hook">
+  <div class="sec-label">CASE</div>
+  <div class="gold-bar"></div>
+  <h2 class="hook-title">無名の経営者が出版し、ひとりで<br>月営業利益<em>1,000万円</em>を常態化。<br>彼は何をしたのか？</h2>
+  <span class="hook-sub">scroll to discover ↓</span>
+</section>
+
+<!-- BRIDGE -->
+<section class="sec-bridge">
+  <p class="bridge-text">彼は「本」を使いました。</p>
+</section>
+
+<!-- STORY -->
+<section class="sec sec-story">
+  <div class="sec-label">STORY</div>
+  <div class="gold-bar"></div>
+  <h2 class="sec-title" style="font-size:20px;">「不動産で本業より稼げるようになったんです」</h2>
+  <div class="story-text">
+    <p>ある勤務医の話をします。</p>
+    <p>彼の日常は、深夜に救急搬送の呼び出しがあり、そのまま緊急手術に入り、翌朝から通常勤務が続きます。<br>20年間も単身赴任をしている上司の背中を見ながら「自分の人生、このままでいいのか」と思いながら働いていました。</p>
+  <img src="story.jpg" alt="" style="width:100%; margin:24px 0 28px; display:block;">
+    <p>将来への不安をなくしたくて、株やサイドビジネスに手を出しましたが、どれもうまくいきませんでした。そこで出会ったのが不動産でした。2019年に投資を始め、3年で家賃収入が医師の年収を超えました。今や家賃年収は3,000万円、総資産は3億円を超えています。</p>
+    <p>自分が成果をだせるようになるにつれて、見えてくるものがありました。同じ境遇の医師が悪徳業者に騙され、知識がないまま踏み出して痛い目に遭っている。その姿が他人事には思えませんでした。</p>
+
+    <div class="story-quote">「このノウハウを医師仲間に伝えたい」</div>
+
+    <p>その思いで本をつくりました。不動産インフルエンサーが乱立する市場に、「現役医師が医師だけに教える不動産投資」という切り口で入っていきました。同じことをしている人が、どこにもいませんでした。</p>
+    <img src="realestate.jpg" alt="" style="width:100%; margin:24px 0 28px; display:block;">
+    <p>動画教材と組み合わせてリリースすると界隈でバズりました。初年度から営業利益1,000万円／月を達成し、稼働しているのは著者一人です。</p>
+    <p class="story-conclusion">「誰もいない場所」を選んだことが、そのまま強さになった。</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROBLEM -->
+<section class="sec sec-problem">
+  <div class="sec-label">THE PROBLEM</div>
+  <div class="gold-bar"></div>
+  <p style="font-size:14px; color:var(--white-dim); line-height:1.95; margin-bottom:16px;">「本を出版して誰もいない場所を選んだ」<br>——簡単に言えばそうなります。</p>
+  <h2 class="twist-title">でも、多くの経営者が<br>同じことをしようとして、<br>失敗しています。</h2>
+  <ul class="prob-list">
+    <li class="prob-item">
+      <span class="prob-num">01</span>
+      <span class="prob-text">競合と比べられ、品質では負けていないのに価格交渉をされる。</span>
+    </li>
+    <li class="prob-item">
+      <span class="prob-num">02</span>
+      <span class="prob-text">広告を止めると集客が止まり、毎月ゼロから始まる消耗戦が続いている。</span>
+    </li>
+    <li class="prob-item">
+      <span class="prob-num">03</span>
+      <span class="prob-text">自分が動けば売れる。でも、自分がいないと回らない構造から抜け出せない。</span>
+    </li>
+    <li class="prob-item">
+      <span class="prob-num">04</span>
+      <span class="prob-text">「良さは会えばわかる」のに、そこまでたどり着かない見込み客が多すぎる。</span>
+    </li>
+    <li class="prob-item">
+      <span class="prob-num">05</span>
+      <span class="prob-text">このままスケールしていいのか？次のステージに進む方法が見えない。</span>
+    </li>
+  </ul>
+  <img src="busy.jpg" alt="" style="width:100%; margin:24px 0 0; display:block; border-radius:4px;">
+
+  <div class="prob-conclusion">
+    <p>消耗の原因は、努力不足ではありません。<br><span>「選ばれる理由」を伝えられる構造を持っていないからです。</span></p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TWIST -->
+<section class="sec sec-twist">
+  <div class="sec-label">THE TWIST</div>
+  <div class="gold-bar"></div>
+  <h2 class="twist-title">では、本を出せば<br>解決するのか。</h2>
+  <div class="twist-body">
+    <p>出版社は本づくりのプロです。でも、本の使い方は教えてくれません。彼らのビジネスは「本をつくること」であって、「あなたの事業の構造を変えること」ではないからです。</p>
+    <p>実際、出版後に後悔する経営者は後を絶ちません。</p>
+    <ul class="twist-failures">
+      <li>つくったはいいけど、自社の宣伝本になってしまった</li>
+      <li>提案されたプロモーションをしたけど、期待した効果がない</li>
+      <li>大量の在庫を抱えてしまい、さばくのが大変</li>
+    </ul>
+    <p>ベストセラーになれば成功、ならなければ失敗。そう思っている経営者ほど、本の力を使いきれていません。</p>
+    <p>本をうまく活用している経営者には共通点があります。ブランディングしたい、PRしたい、有名になりたいという短期的な目的で本をつくっていません。経営戦略に紐づけた明確な意図をもって、本を「使って」います。</p>
+  </div>
+</section>
+
+<!-- BRIDGE 2 -->
+<section class="sec-bridge sec-bridge-2">
+  <p class="bridge-text">本は出して終わりではありません。<br>むしろ、<em>出版からが本番</em>です。</p>
+</section>
+
+<!-- INSIGHT -->
+<section class="sec sec-insight">
+  <div class="sec-label">INSIGHT</div>
+  <div class="gold-bar"></div>
+  <h2 class="insight-title">本の使い方を知っている経営者だけが、<br>事業の構造を変えられます。</h2>
+  <div class="insight-body">
+    <p>あの医師が手に入れたのは、ベストセラーではありませんでした。「誰もいない市場」でした。</p>
+    <p>本を出したことで、比較する相手がいなくなりました。説明しなくても伝わる顧客だけが来るようになりました。自分がいなくても回る仕組みが生まれました。</p>
+    <p>これをIP化と呼びます。※ IP（Intellectual Property＝知的財産）とは、著者の知識・経験・思想を形にした資産のことです。<strong>「あなたが選ばれる理由」を構造にすること——それがIP化です。</strong>本は、そのための手段です。売れるかどうかより、誰に届くかを設計する。届け方まで考えて初めて、本は経営の武器になります。</p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-cat">CPA</span>
+      <span class="stat-num">30〜50%<span class="stat-suffix">削減</span></span>
+      <span class="stat-label">本経由の顧客獲得単価</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-cat">成約率</span>
+      <span class="stat-num">2〜3倍</span>
+      <span class="stat-label">本の読者からの成約率</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-cat">稼働</span>
+      <span class="stat-num">1人</span>
+      <span class="stat-label">IPで構造化した事業モデルの実例</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CASE STUDY -->
+<section class="sec sec-cases">
+  <div class="sec-label">CASE STUDY</div>
+  <div class="gold-bar"></div>
+  <h2 class="case-intro">他にも本の「使い方」を<br>変えた経営者たちがいます。</h2>
+
+  <div class="case-list">
+    <div class="case-card">
+      <div class="case-head">
+        <div class="case-tag">CASE 01 ／ IT会社 × コンサルティング</div>
+      </div>
+      <img src="lecture.jpg" alt="" style="width:100%; display:block;">
+      <div class="case-body">
+        <h4 class="case-sub">「IT会社」から「コンサル会社」へ</h4>
+        <p class="case-challenge">出版で著者の想いや専門性、実績を体系化できるように設計し、出版記念講演会につなげました。その結果、「御社にしか頼めない」という顧客だけが集まり、数億円規模のコンサル案件が10件以上成立しました。</p>
+        <div class="case-kpi-row">
+          <div class="case-kpi">
+            <div class="case-kpi-num">満席</div>
+            <div class="case-kpi-label">出版記念<br>講演会</div>
+          </div>
+          <div class="case-kpi">
+            <div class="case-kpi-num">10件以上</div>
+            <div class="case-kpi-label">数億円規模の<br>案件受注</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-head">
+        <div class="case-tag">CASE 02 ／ カウンセラー × 個人事業</div>
+      </div>
+      <img src="counselor.jpg" alt="" style="width:100%; display:block;">
+      <div class="case-body">
+        <h4 class="case-sub">「無名カウンセラー」から「業界の一流」へ</h4>
+        <p class="case-challenge">出版で「業界内でのポジション確立」を設計しました。その結果、「独自メソッドなんてない」と語っていたカウンセラーが、業界内で一流と認知されました。出版2ヶ月でテレビキー局からオファー、1年で3事業を展開しています。</p>
+        <div class="case-kpi-row">
+          <div class="case-kpi">
+            <div class="case-kpi-num">2ヶ月</div>
+            <div class="case-kpi-label">出版後<br>テレビ出演オファー</div>
+          </div>
+          <div class="case-kpi">
+            <div class="case-kpi-num">3事業</div>
+            <div class="case-kpi-label">1年で<br>事業展開</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:40px; text-align:left; padding:32px 20px; background:rgba(255,255,255,0.03); border-top:1px solid rgba(201,168,92,0.2);">
+    <p style="font-family:'Noto Serif JP',serif; font-size:17px; font-weight:600; color:var(--white); line-height:1.8; margin-bottom:6px;">あなたの会社でも、<br>同じことが起きるかもしれません。</p>
+    <p style="font-size:14px; color:var(--white-dim); line-height:1.8; margin-bottom:24px;">まず、話だけ聞いてみませんか。</p>
+    <a href="#" class="btn-main">まずは気軽に話してみる ▶<span class="btn-sub">LINE登録はこちら</span></a>
+    <p style="font-size:11px; color:var(--muted); margin-top:8px;">完全無料 ・ 強引な営業なし ・ 秘密厳守</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section class="sec sec-flow">
+  <div class="sec-label">HOW IT WORKS</div>
+  <div class="gold-bar"></div>
+  <h2 class="sec-title">新流舎が提供するのは、<br>「本の使い方」の設計です。</h2>
+
+  <div class="flow-list">
+    <div class="flow-item">
+      <div class="flow-num">01</div>
+      <div class="flow-body">
+        <h3>「あなたでなければならない理由」を掘り起こします</h3>
+        <p>なぜこの事業をしているのか。どんな失敗を乗り越えてきたのか。その根源的な動機こそが、比較されない本の核になります。</p>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">02</div>
+      <div class="flow-body">
+        <h3>「読者目線」に翻訳します</h3>
+        <p>自慢話でも自伝でもありません。見込み客が「自分に関係ある話だ」と感じる設計に落とし込みます。競合との違いは機能ではなく、「考え方の違い」で示します。</p>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">03</div>
+      <div class="flow-body">
+        <h3>「届け方」まで設計します</h3>
+        <p>本を出して終わりにしません。問い合わせ動線、セミナーとの連携、SNSとの組み合わせなど、本を軸にした集客・営業フローごと設計します。</p>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-num">04</div>
+      <div class="flow-body">
+        <h3>事業の構造として機能させます</h3>
+        <p>指名買いが起きると、顧客の質が変わります。説明コストが下がります。任せられる仕組みが生まれます。本は一度つくれば、長く効き続ける資産になります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMPARISON -->
+<section class="sec sec-metrics">
+  <div class="sec-label">COMPARISON</div>
+  <div class="gold-bar"></div>
+  <h2 class="sec-title">その集客コスト、<br>来年も<span style="color:var(--gold)">また支払いますか？</span></h2>
+  <p style="font-size:14px; line-height:2; color:var(--white-dim); margin-bottom:32px;">広告、SNS運用、ブランディングコンサル──どれも止めれば終わります。毎月同じ費用がかかり続ける「消費」です。でも、本は違います。一度つくれば半永久的に使い続けられる「資産」になります。</p>
+
+  <div style="overflow-x:auto; -webkit-overflow-scrolling:touch; border-radius:4px; overflow:hidden;">
+    <table style="width:100%; border-collapse:collapse; font-size:13px; min-width:320px; table-layout:fixed; background:#fff; color:#333;">
+      <colgroup>
+        <col style="width:26%">
+        <col style="width:22%">
+        <col style="width:22%">
+        <col style="width:30%">
+      </colgroup>
+      <thead>
+        <tr style="background:#f0ece3;">
+          <th style="padding:12px 8px; text-align:left; color:#888; font-weight:400;"></th>
+          <th style="padding:12px 4px; text-align:center; color:#555; font-weight:500; font-size:11px;">SNS広告<br>運用</th>
+          <th style="padding:12px 4px; text-align:center; color:#555; font-weight:500; font-size:11px;">ブランディング<br>コンサル</th>
+          <th style="padding:12px 6px; text-align:center; color:#8a6c2e; font-weight:700; border-bottom:2px solid #c9a85c;">出版（本）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <td style="padding:14px 8px; color:#555; font-size:12px;">費用の目安</td>
+          <td style="padding:14px 8px; text-align:center; color:#888;">月50〜200万円〜</td>
+          <td style="padding:14px 8px; text-align:center; color:#888;">200〜500万円〜</td>
+          <td style="padding:14px 8px; text-align:center; color:#8a6c2e; font-weight:700;">商業出版なら<br>印税収入あり</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(0,0,0,0.07); background:#faf8f4;">
+          <td style="padding:14px 8px; color:#555; font-size:12px;">資産としての寿命</td>
+          <td style="padding:14px 8px; text-align:center; color:#888;">運用中のみ</td>
+          <td style="padding:14px 8px; text-align:center; color:#888;">契約期間中のみ</td>
+          <td style="padding:14px 8px; text-align:center; color:#8a6c2e; font-weight:700;">半永久的に<br>使い続けられる</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(0,0,0,0.07);">
+          <td style="padding:14px 8px; color:#555; font-size:12px;">見込み客への深度</td>
+          <td style="padding:14px 8px; text-align:center; color:#888;">数秒の接触</td>
+          <td style="padding:14px 8px; text-align:center; color:#888;">間接的な訴求</td>
+          <td style="padding:14px 8px; text-align:center; color:#8a6c2e; font-weight:700;">数時間の<br>深い体験</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(0,0,0,0.07); background:#faf8f4;">
+          <td style="padding:14px 8px; color:#555; font-size:12px;">集客以外への波及</td>
+          <td style="padding:14px 8px; text-align:center; color:#888;">集客のみ</td>
+          <td style="padding:14px 8px; text-align:center; color:#888;">採用〜組織</td>
+          <td style="padding:14px 8px; text-align:center; color:#8a6c2e; font-weight:700;">集客・採用・<br>教育・営業まで</td>
+        </tr>
+        <tr>
+          <td style="padding:14px 8px; color:#555; font-size:12px;">第三者としての信頼性</td>
+          <td style="padding:14px 8px; text-align:center; color:#888;">自社発信</td>
+          <td style="padding:14px 8px; text-align:center; color:#888;">自社発信</td>
+          <td style="padding:14px 8px; text-align:center; color:#8a6c2e; font-weight:700;">書店という<br>公の場に並ぶ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:28px; padding:24px 20px; background:rgba(201,168,92,0.06); border:1px solid rgba(201,168,92,0.2); border-radius:4px;">
+    <p style="font-family:'Noto Serif JP',serif; font-size:16px; font-weight:600; color:var(--white); line-height:1.75;">一冊の本は、広告でもパンフレットでもなく、<br><span style="color:var(--gold)">「経営者そのもの」</span>を届けるメディアです。</p>
+    <p style="font-size:13px; color:var(--white-dim); margin-top:8px;">つくるのは一度。使えるのは、ずっと。</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROFILE -->
+<section class="sec sec-profile">
+  <div class="sec-label">PRODUCER</div>
+  <div class="gold-bar"></div>
+  <h2 class="sec-title" style="margin-bottom:0;">プロデューサー紹介</h2>
+
+  <div class="profile-box">
+    <div class="profile-icon">
+      <img src="shiroyamasan.png" alt="白山裕彬">
+    </div>
+    <p class="profile-role">代表取締役 ／ 編集者</p>
+    <p class="profile-name">白山 裕彬</p>
+    <p class="profile-name-en">HIROAKI SHIROYAMA</p>
+    <p class="profile-bio">出版社勤務時代、無名の処女作家を数多く発掘し、自主企画の重版率は業界平均の4倍以上を記録。0.075%と言われる中、10万部ベストセラーを10年以上毎年達成。出版社をゼロから取次PPIにおけるSランク指定（3,700社中上位5社）まで成長させた実績を持つ。2024年に新流舎を設立し、出版を起点とした企業IP化戦略を展開中。</p>
+
+    <p style="font-size:11px; letter-spacing:0.2em; color:var(--gold); margin-bottom:14px; text-align:left;">クライアント実績 ACHIEVEMENTS</p>
+    <div style="display:flex; flex-direction:column; gap:12px; text-align:left;">
+      <div style="border-left:3px solid var(--gold); padding:14px 16px; background:rgba(255,255,255,0.04);">
+        <p style="font-size:10px; letter-spacing:0.15em; color:var(--gold); margin-bottom:6px;">売上</p>
+        <p style="font-size:15px; font-weight:700; color:var(--white); line-height:1.6;">無名のベンチャー企業が本をきっかけに<br>売上<span style="color:var(--gold)">２．５倍</span></p>
+      </div>
+      <div style="border-left:3px solid var(--gold); padding:14px 16px; background:rgba(255,255,255,0.04);">
+        <p style="font-size:10px; letter-spacing:0.15em; color:var(--gold); margin-bottom:6px;">採用</p>
+        <p style="font-size:15px; font-weight:700; color:var(--white); line-height:1.6;">地方の中小企業が新卒採用で<br><span style="color:var(--gold)">３年定着率１００％</span>を達成</p>
+      </div>
+      <div style="border-left:3px solid var(--gold); padding:14px 16px; background:rgba(255,255,255,0.04);">
+        <p style="font-size:10px; letter-spacing:0.15em; color:var(--gold); margin-bottom:6px;">メディア</p>
+        <p style="font-size:15px; font-weight:700; color:var(--white); line-height:1.6;">グーグル検索数ゼロだった著者が<br>テレビのキー局から<span style="color:var(--gold)">出演オファー</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="sec sec-faq">
+  <div class="sec-label">FAQ</div>
+  <div class="gold-bar"></div>
+  <h2 class="sec-title" style="margin-bottom:0;">よくあるご質問</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">本を出すなんて、有名人や実績のある人だけでは？</span>
+        <span class="faq-icon">＋</span>
+      </button>
+      <div class="faq-a">よくある誤解です。出版に必要なのは知名度でも華々しい実績でもありません。「なぜこの事業をしているのか」という純粋な動機と、それを裏付ける経験があれば十分です。むしろ等身大の言葉で書かれた一冊のほうが、読者の心に深く刺さります。</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">文章を書くのが苦手でも大丈夫ですか？</span>
+        <span class="faq-icon">＋</span>
+      </button>
+      <div class="faq-a">問題ありません。本づくりの核は「文章力」ではなく「何を伝えるか」です。経営者への深いヒアリングをもとに、編集者がコンテンツを整理・構成していきます。「書けない」ことが理由で諦める必要はまったくありません。</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">ベストセラーにならないと意味がないのでは？</span>
+        <span class="faq-icon">＋</span>
+      </button>
+      <div class="faq-a">目的によってはベストセラーは必須ではありません。1万部しか売れなくても、テレビ出演のオファーが来て業界内で一流と認知された事例があります。大切なのは「何万部売れたか」ではなく、「理想の顧客に深く届いたか」です。</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">費用はどのくらいかかりますか？</span>
+        <span class="faq-icon">＋</span>
+      </button>
+      <div class="faq-a">商業出版の場合、出版社が制作費を負担し、著者には印税が入ります。つまり出版自体に費用はかかりません。ただし、企画が通るまでの準備や出版後の活用設計にはサポートが必要になる場合があります。まずはご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">出版までどのくらい時間がかかりますか？</span>
+        <span class="faq-icon">＋</span>
+      </button>
+      <div class="faq-a">企画から出版まで、一般的に1〜1.5年ほどかかります。ただし集客・営業への活用は出版前から始められます。コンテンツができた時点から組み込む設計が可能です。</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">自社に「書くネタ」があるか自信がありません。</span>
+        <span class="faq-icon">＋</span>
+      </button>
+      <div class="faq-a">「うちに大した話はない」とおっしゃる経営者ほど、掘り起こすと宝が出てきます。なぜこの事業を始めたのか、どんな失敗を乗り越えてきたのか、何を守り続けてきたのか。コンテンツがないのではなく、まだ言語化されていないだけです。</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FINAL CTA -->
+<section class="sec-cta">
+  <div class="sec-label" style="margin-bottom:20px;">IP戦略プロデュース</div>
+  <h2 class="cta-title">あなたの会社の<br>「誰もいない場所」を、<br>一緒に探しませんか。</h2>
+  <p class="cta-text">出版が自社に合うかどうか、まだわからなくて大丈夫です。まずはLINEから、気軽に相談してみてください。無理な売り込みは一切しません。</p>
+  <a href="#" class="btn-main">まずは気軽に話してみる ▶<span class="btn-sub">LINE登録はこちら</span></a>
+  <p class="btn-note">完全無料 ・ 強引な営業なし ・ 秘密厳守</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 SHINRYUSYA Co., Ltd. All Rights Reserved.</p>
+</footer>
+
+<!-- FIXED BAR -->
+<div class="fixed-bar">
+  <a href="#">まずは気軽に話してみる ▶<span class="btn-sub">LINE登録はこちら</span></a>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
