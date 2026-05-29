@@ -550,8 +550,15 @@
 
     /* ─── CTA ─── */
     .sec-cta {
-      background: var(--navy-mid);
-      padding: 64px 24px;
+      background:
+        linear-gradient(to bottom,
+          var(--navy) 0%,
+          rgba(11,13,20,0) 18%,
+          rgba(11,13,20,0) 82%,
+          var(--navy) 100%),
+        linear-gradient(rgba(8,9,14,0.84), rgba(11,13,20,0.80)),
+        url('cta-bg.jpg') right center/cover no-repeat;
+      padding: 72px 24px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -868,8 +875,8 @@
 <section class="sec sec-twist">
   <div class="sec-label">THE TRUTH</div>
   <div class="gold-bar"></div>
-  <h2 class="sec-title">ベストセラーを<br>狙ってはいけない。</h2>
-  <p class="sec-lead">多くの経営者が出版で失敗する、3つの理由。</p>
+  <h2 class="sec-title">経営者はベストセラーを<br>狙ってはいけない。</h2>
+  <p class="sec-lead" style="font-family:'Noto Serif JP',serif; font-size:16px; font-weight:600; color:var(--gold); letter-spacing:0.06em; margin-top:8px;">多くの経営者が出版で失敗する、3つの理由。</p>
   <div class="twist-reasons">
     <div class="twist-reason">
       <div class="twist-reason-num">1</div>
@@ -894,7 +901,7 @@
     </div>
   </div>
   <div class="twist-highlight">
-    <p>本業が出版以外の経営者にとって大事なことは、<br>売れるかどうかよりも、<strong>出版目的に適った結果を得られるかどうかだ。</strong></p>
+    <p>経営者にとって大事なことは、<br>売れるかどうかよりも、<strong>出版目的に適った結果を得られるかどうかだ。</strong></p>
   </div>
 </section>
 
@@ -924,7 +931,7 @@
     </div>
     <div class="stat-item" style="grid-column:1 / -1;">
       <div class="stat-num">1,000万</div>
-      <div class="stat-label">初年度営業利益/月<br>（勤務医事例）</div>
+      <div class="stat-label">営業利益/月常態化<br>（勤務医事例）</div>
     </div>
   </div>
 </section>
@@ -935,8 +942,8 @@
 <section class="sec sec-cases-new">
   <div class="sec-label">CASE STUDY</div>
   <div class="gold-bar"></div>
-  <h2 class="sec-title">本を「使った」<br>経営者の成果</h2>
-  <p class="sec-lead">業界も規模も違う。本の使い方を知っていた、ただそれだけだ。</p>
+  <h2 class="sec-title">本を使ったら<br>こんなに変化した</h2>
+  <p class="sec-lead">彼らは「本の使い方」を変えただけ。</p>
 
   <div class="case-group">
     <div class="case-category">
@@ -959,7 +966,7 @@
     <div class="case-card-new">
       <div class="case-card-num">02</div>
       <div class="case-card-who">塾経営者（学生起業）</div>
-      <div class="case-card-result">実績ゼロから<br><span>業界屈指のインフルエンサー</span>へ</div>
+      <div class="case-card-result">無名の学生起業・実績ゼロから<br><span>業界屈指のインフルエンサー</span>へ</div>
       <p class="case-card-body">「受験合格を目的とする塾」という常識を壊し、子どもの幸せな人生を軸にしたDifferentな問いを本にした。大手ウェブメディアからコメンテーター出演オファーが相次ぎ、わずか3年で業界の顔に。</p>
     </div>
   </div>
@@ -1030,15 +1037,32 @@
 <section class="sec sec-profile">
   <div class="sec-label">PRODUCER</div>
   <div class="gold-bar"></div>
-  <h2 class="sec-title">代表プロデューサー</h2>
+  <h2 class="sec-title" style="margin-bottom:0;">プロデューサー紹介</h2>
+
   <div class="profile-box">
-    <div class="profile-icon"><img src="shiroyamasan.png" alt="代表プロデューサー"></div>
-    <div class="profile-role">新流舎 代表 / 出版IPプロデューサー</div>
-    <div class="profile-name">白山 裕彬</div>
-    <div class="profile-name-en">HIROAKI SHIROYAMA</div>
-    <p class="profile-bio">
-      出版社で編集長を長年務め、10万部超のベストセラーを10年以上にわたり毎年企画・制作。独立後は経営者の暗黙知をIPとして言語化し、本を経営に実装するコンサルティングを展開。一部上場企業から個人事業主まで、数百人の経営者と向き合ってきた。
-    </p>
+    <div class="profile-icon">
+      <img src="shiroyamasan.png" alt="白山裕彬">
+    </div>
+    <p class="profile-role">代表取締役 ／ 編集者</p>
+    <p class="profile-name">白山 裕彬</p>
+    <p class="profile-name-en">HIROAKI SHIROYAMA</p>
+    <p class="profile-bio">出版社勤務時代、無名の処女作家を数多く発掘し、自主企画の重版率は業界平均の4倍以上を記録。0.075%と言われる中、10万部ベストセラーを10年以上毎年達成。出版社をゼロから取次PPIにおけるSランク指定（3,700社中上位5社）まで成長させた実績を持つ。2024年に新流舎を設立し、出版を起点とした企業IP化戦略を展開中。</p>
+
+    <p style="font-size:11px; letter-spacing:0.2em; color:var(--gold); margin-bottom:14px; text-align:left;">クライアント実績 ACHIEVEMENTS</p>
+    <div style="display:flex; flex-direction:column; gap:12px; text-align:left;">
+      <div style="border-left:3px solid var(--gold); padding:14px 16px; background:rgba(255,255,255,0.04);">
+        <p style="font-size:10px; letter-spacing:0.15em; color:var(--gold); margin-bottom:6px;">売上</p>
+        <p style="font-size:15px; font-weight:700; color:var(--white); line-height:1.6;">無名のベンチャー企業が本をきっかけに<br>売上<span style="color:var(--gold)">２．５倍</span></p>
+      </div>
+      <div style="border-left:3px solid var(--gold); padding:14px 16px; background:rgba(255,255,255,0.04);">
+        <p style="font-size:10px; letter-spacing:0.15em; color:var(--gold); margin-bottom:6px;">採用</p>
+        <p style="font-size:15px; font-weight:700; color:var(--white); line-height:1.6;">地方の中小企業が新卒採用で<br><span style="color:var(--gold)">３年定着率１００％</span>を達成</p>
+      </div>
+      <div style="border-left:3px solid var(--gold); padding:14px 16px; background:rgba(255,255,255,0.04);">
+        <p style="font-size:10px; letter-spacing:0.15em; color:var(--gold); margin-bottom:6px;">メディア</p>
+        <p style="font-size:15px; font-weight:700; color:var(--white); line-height:1.6;">グーグル検索数ゼロだった著者が<br>テレビのキー局から<span style="color:var(--gold)">出演オファー</span></p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1052,31 +1076,45 @@
   <div class="faq-list">
     <div class="faq-item">
       <div class="faq-q">
-        <span class="faq-q-text">商業出版でないとダメですか？</span>
+        <span class="faq-q-text">本を出すなんて、有名人や実績のある人だけでは？</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">目的によります。新流舎では商業出版・企業出版・自費出版の枠にとらわれず、経営課題の解決に最適な形を提案します。</div>
+      <div class="faq-a">よくある誤解です。出版に必要なのは知名度でも華々しい実績でもありません。「なぜこの事業をしているのか」という純粋な動機と、それを裏付ける経験があれば十分です。むしろ等身大の言葉で書かれた一冊のほうが、読者の心に深く刺さります。</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">
-        <span class="faq-q-text">本を出したことがなくても大丈夫ですか？</span>
+        <span class="faq-q-text">文章を書くのが苦手でも大丈夫ですか？</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">問題ありません。むしろ出版の常識に縛られていない方が、目的に沿った本をつくりやすいケースもあります。</div>
+      <div class="faq-a">問題ありません。本づくりの核は「文章力」ではなく「何を伝えるか」です。経営者への深いヒアリングをもとに、編集者がコンテンツを整理・構成していきます。「書けない」ことが理由で諦める必要はまったくありません。</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">
-        <span class="faq-q-text">どんな業種でも対応できますか？</span>
+        <span class="faq-q-text">ベストセラーにならないと意味がないのでは？</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">はい。医療・金融・飲食・教育・製造など、業種を問わず対応しています。</div>
+      <div class="faq-a">目的によってはベストセラーは必須ではありません。1万部しか売れなくても、テレビ出演のオファーが来て業界内で一流と認知された事例があります。大切なのは「何万部売れたか」ではなく、「理想の顧客に深く届いたか」です。</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">
         <span class="faq-q-text">費用はどのくらいかかりますか？</span>
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">目的・規模・出版形態によって異なります。まずは無料相談でご状況をお聞かせください。</div>
+      <div class="faq-a">商業出版の場合、出版社が制作費を負担し、著者には印税が入ります。つまり出版自体に費用はかかりません。ただし、企画が通るまでの準備や出版後の活用設計にはサポートが必要になる場合があります。まずはご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">出版までどのくらい時間がかかりますか？</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">企画から出版まで、一般的に1〜1.5年ほどかかります。ただし集客・営業への活用は出版前から始められます。コンテンツができた時点から組み込む設計が可能です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">自社に「書くネタ」があるか自信がありません。</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">「うちに大した話はない」とおっしゃる経営者ほど、掘り起こすと宝が出てきます。なぜこの事業を始めたのか、どんな失敗を乗り越えてきたのか、何を守り続けてきたのか。コンテンツがないのではなく、まだ言語化されていないだけです。</div>
     </div>
   </div>
 </section>
